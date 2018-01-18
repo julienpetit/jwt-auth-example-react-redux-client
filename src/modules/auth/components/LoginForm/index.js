@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { loginRequest } from '../../actions';
 
-import { loginRequest } from '../../actions';
-
-class Login extends Component {
+class LoginForm extends Component {
 
     static propTypes = {
         handleSubmit: PropTypes.func,
@@ -42,7 +41,7 @@ class Login extends Component {
                 )}
 
                 {hasErrors && (
-                    <p>Login and password does not match.</p>
+                    <p>LoginForm and password does not match.</p>
                 )}
 
                 {!isAuthenticated && (
@@ -67,7 +66,7 @@ class Login extends Component {
                     </form>
                 )}
             </div>
-        )
+        );
     }
 }
 
@@ -77,7 +76,7 @@ const mapStateToProps = ({ auth }) => ({
     hasErrors: auth.hasErrors,
 });
 
-const connected = connect(mapStateToProps, { loginRequest })(Login);
+const connected = connect(mapStateToProps, { loginRequest })(LoginForm);
 
 const formed = reduxForm({
     form: 'login',
