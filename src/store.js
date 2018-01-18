@@ -10,8 +10,8 @@ const store = createStore(
     rootReducer,
     {},
     compose (
-        applyMiddleware(logger),
         applyMiddleware(sagaMiddleware),
+        applyMiddleware(logger),
     )
 );
 

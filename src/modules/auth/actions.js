@@ -1,20 +1,16 @@
-import {
-    LOGIN_REQUEST,
-    LOGIN_FAILURE,
-    LOGIN_SUCCESS,
-} from './actionTypes';
+import * as t from './actionTypes';
 
 export const loginRequest = (payload) => ({
-    type: LOGIN_REQUEST,
+    type: t.LOGIN_REQUEST,
     payload,
 });
 
 export const loginSuccess = (payload) => ({
-    type: LOGIN_SUCCESS,
+    type: t.LOGIN_SUCCESS,
     payload,
 });
 
 export const loginError = (payload) => ({
-    type: LOGIN_FAILURE,
+    type: t.LOGIN_FAILURE,
     payload,
 });

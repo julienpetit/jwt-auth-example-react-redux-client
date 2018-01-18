@@ -1,20 +1,24 @@
+import { handleApiErrors } from '../../lib/api-errors';
+
 const api = {
 
-    // login(action){
-    //     return fetch('/endpoint', {
-    //         method  : 'POST',
-    //         headers : {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({username: action.user, password: action.password})
-    //     })
-    //         .then(statusHelper)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             return data
-    //         })
-    // },
+    login({ payload }){
+
+        let data = new FormData();
+        data.append('_username', payload.username);
+        data.append('_password', payload.password);
+
+        return fetch('http://localhost:8000/login_check', {
+            method  : 'POST',
+            headers : {
+                'Accept': 'application/json',
+            },
+            body: data
+        })
+            .then(handleApiErrors)
+            .then(response => response.json())
+            .then(data => data);
+    },
 };
 
-export default api
+export default api;

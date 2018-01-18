@@ -4,7 +4,6 @@ import auth from './modules/auth';
 import './App.css';
 import logo from './logo.svg';
 
-
 class App extends Component {
 
     constructor(props) {
@@ -29,9 +28,8 @@ class App extends Component {
     }
 
     render() {
-
         const { username, password } = this.state;
-        const { isAuthenticated } = this.props;
+        const { isAuthenticated, isLoading } = this.props;
 
         return (
             <div className="App">
@@ -50,6 +48,10 @@ class App extends Component {
                     </form>
                 )}
 
+                {isLoading && (
+                    <p>Loading...</p>
+                )}
+
                 {isAuthenticated && (
                     <h2>Bienvenue</h2>
                 )}
@@ -64,6 +66,7 @@ class App extends Component {
 
 const mapStateToProps = ({ auth }) => ({
     isAuthenticated: auth.token !== null,
+    isLoading: auth.isLoading,
 });
 
 const connected = connect(mapStateToProps, dispatch => ({ dispatch }))(App);
