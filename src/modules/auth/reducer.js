@@ -3,6 +3,7 @@ import * as t from './actionTypes';
 const INITIAL_STATE = {
     token: null,
     isLoading: false,
+    hasErrors: false,
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -10,21 +11,20 @@ export default function (state = INITIAL_STATE, action) {
 
         case t.LOGIN_REQUEST:
             return {
-                ...state,
+                ...INITIAL_STATE,
                 isLoading: true,
             };
 
         case t.LOGIN_SUCCESS:
             return {
-                ...state,
+                ...INITIAL_STATE,
                 ...action.payload,
-                isLoading: false,
             };
 
         case t.LOGIN_FAILURE:
             return {
-                ...state,
-                isLoading: false,
+                ...INITIAL_STATE,
+                hasErrors: true,
             };
 
         default:
