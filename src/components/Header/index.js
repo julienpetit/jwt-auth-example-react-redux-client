@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 import './Header.css';
 
@@ -9,9 +9,9 @@ export default () => (
             <img src={logo} className="App-logo" alt="logo"/>
             <h1 className="App-title">Welcome to React - Redux boilerplate</h1>
 
-            <Link to="/" >Home</Link>
-            <Link to="/login" >Login</Link>
-            <Link to="/account" >Account</Link>
+            <NavLink to="/" exact activeClassName='active'>Home</NavLink>
+            <NavLink to="/login" exact activeClassName='active'>Login</NavLink>
+            <NavLink to="/account" exact activeClassName='active'>Account</NavLink>
         </header>
     </div>
 );

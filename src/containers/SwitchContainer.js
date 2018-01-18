@@ -19,8 +19,8 @@ class SwitchContainer extends React.Component {
         return (
             <Switch location={location}>
                 <Route exact path="/" component={HomePage}/>
-                <Route path="/login" component={LoginPage}/>
-                <PrivateRoute path="/account" component={AccountPage}/>
+                <Route exact path="/login" component={LoginPage}/>
+                <PrivateRoute exact path="/account" component={AccountPage}/>
             </Switch>
         );
     }
