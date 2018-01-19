@@ -71,7 +71,7 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = ({ auth }) => ({
-    isAuthenticated: auth.token !== null,
+    isAuthenticated: auth.isAuthenticated,
     isLoading: auth.isLoading,
     hasErrors: auth.hasErrors,
 });

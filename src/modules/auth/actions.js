@@ -23,3 +23,11 @@ export const loginLoadTokenSuccess = (token) => ({
     type: t.LOGIN_LOAD_TOKEN_SUCCESS,
     payload: token,
 });
+
+export const logoutRequest = () => ({
+    type: t.LOGOUT_REQUEST,
+});
+
+export const logoutSuccess = () => ({
+    type: t.LOGOUT_SUCCESS,
+});

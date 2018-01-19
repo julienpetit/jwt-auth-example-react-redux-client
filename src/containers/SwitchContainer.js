@@ -6,6 +6,7 @@ import auth from '../modules/auth';
 import PrivateRoute from './PrivateRouteContainer';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
+import LogoutPage from '../pages/LogoutPage';
 import AccountPage from '../pages/AccountPage';
 
 class SwitchContainer extends React.Component {
@@ -21,6 +22,7 @@ class SwitchContainer extends React.Component {
             <Switch location={location}>
                 <Route exact path="/" component={HomePage}/>
                 <Route exact path="/login" component={LoginPage}/>
+                <Route exact path="/logout" component={LogoutPage}/>
                 <PrivateRoute exact path="/account" component={AccountPage}/>
             </Switch>
         );

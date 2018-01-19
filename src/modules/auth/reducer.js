@@ -2,6 +2,8 @@ import * as t from './actionTypes';
 
 const INITIAL_STATE = {
     token: null,
+    tokenData: {},
+    isAuthenticated: false,
     isLoading: false,
     hasErrors: false,
 };
@@ -30,7 +32,12 @@ export default function (state = INITIAL_STATE, action) {
         case t.LOGIN_LOAD_TOKEN_SUCCESS:
             return {
                 ...INITIAL_STATE,
-                token: action.payload.token,
+                ...action.payload,
+            };
+
+        case t.LOGOUT_SUCCESS:
+            return {
+                ...INITIAL_STATE,
             };
 
         default:
