@@ -16,13 +16,13 @@ const Header = ({ isAuthenticated }) => (
         ) : (
             <NavLink to="/login" exact activeClassName='active'>Login</NavLink>
         )}
+
         <NavLink to="/account" exact activeClassName='active'>Account</NavLink>
     </header>
 );
 
-const mapStateToProps = ({ auth, router }) => ({
+const mapStateToProps = ({ auth }) => ({
     isAuthenticated: auth.isAuthenticated,
-    location: router.location,
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, null, null, { pure: false })(Header);
