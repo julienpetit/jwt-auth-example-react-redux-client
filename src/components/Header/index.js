@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './Header.css';
 
@@ -21,8 +21,8 @@ const Header = ({ isAuthenticated }) => (
     </header>
 );
 
-const mapStateToProps = ({ auth }) => ({
-    isAuthenticated: auth.isAuthenticated,
-});
+Header.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+};
 
-export default connect(mapStateToProps, null, null, { pure: false })(Header);
+export default Header;
