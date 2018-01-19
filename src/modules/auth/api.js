@@ -8,7 +8,7 @@ const api = {
         data.append('_username', payload.username);
         data.append('_password', payload.password);
 
-        return fetch('http://localhost:8000/login_check', {
+        return fetch(`${process.env.REACT_APP_HOST_API}/login_check`, {
             method  : 'POST',
             headers : {
                 'Accept': 'application/json',
