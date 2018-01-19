@@ -14,3 +14,12 @@ export const loginError = (payload) => ({
     type: t.LOGIN_FAILURE,
     payload,
 });
+
+export const loginLoadTokenRequest = () => ({
+    type: t.LOGIN_LOAD_TOKEN_REQUEST,
+});
+
+export const loginLoadTokenSuccess = (token) => ({
+    type: t.LOGIN_LOAD_TOKEN_SUCCESS,
+    payload: token,
+});

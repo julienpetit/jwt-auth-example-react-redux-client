@@ -27,6 +27,12 @@ export default function (state = INITIAL_STATE, action) {
                 hasErrors: true,
             };
 
+        case t.LOGIN_LOAD_TOKEN_SUCCESS:
+            return {
+                ...INITIAL_STATE,
+                token: action.payload.token,
+            };
+
         default:
             return state;
     }

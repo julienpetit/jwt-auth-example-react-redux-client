@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router';
 
+import auth from '../modules/auth';
 import PrivateRoute from './PrivateRouteContainer';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
@@ -10,7 +11,7 @@ import AccountPage from '../pages/AccountPage';
 class SwitchContainer extends React.Component {
 
     componentWillMount() {
-        // TODO : Here is the place to check if an auth token is in the localstorage
+        this.props.dispatch(auth.actions.loginLoadTokenRequest());
     }
 
     render() {
@@ -30,4 +31,4 @@ const mapStateToProps = ({ router }) => ({
     location: router.location,
 });
 
-export default connect(mapStateToProps)(SwitchContainer);
+export default connect(mapStateToProps, dispatch => ({ dispatch }))(SwitchContainer);

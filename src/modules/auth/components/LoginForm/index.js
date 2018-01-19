@@ -41,7 +41,7 @@ class LoginForm extends Component {
                 )}
 
                 {hasErrors && (
-                    <p>LoginForm and password does not match.</p>
+                    <p>username and password does not match.</p>
                 )}
 
                 {!isAuthenticated && (
