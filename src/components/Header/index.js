@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './Header.css';
 
-const Header = ({ isAuthenticated }) => (
+const Header = ({ isAuthenticated = false }) => (
     <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
         <h1 className="App-title">Welcome to React - Redux boilerplate</h1>
@@ -24,7 +24,7 @@ const Header = ({ isAuthenticated }) => (
 );
 
 Header.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
 export default Header;

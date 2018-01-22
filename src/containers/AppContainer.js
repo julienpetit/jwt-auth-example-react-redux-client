@@ -9,14 +9,19 @@ class AppContainer extends Component {
     }
 
     render() {
-        const { children } = this.props;
+        const { children, isAuthenticated } = this.props;
 
         return (
             <div>
-                {children}
+                {React.Children.map(children, (child) => React.cloneElement(child, { isAuthenticated }))}
             </div>
         );
     }
 }
 
-export default connect(null, dispatch => ({ dispatch }), null, { pure: false })(AppContainer);
+export default connect(
+    ({ auth }) => ({ isAuthenticated: auth.isAuthenticated }),
+    dispatch => ({ dispatch }),
+    null,
+    { pure: false }
+)(AppContainer);

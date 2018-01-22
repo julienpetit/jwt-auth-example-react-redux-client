@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { required, length } from 'redux-form-validators';
+import { required, length, email } from 'redux-form-validators';
 import { fetchRequest, updateRequest } from '../../actions';
 
 class UserEdit extends Component {
@@ -34,6 +34,7 @@ class UserEdit extends Component {
     render() {
         const {
             isLoading,
+            initialValues,
             pristine,
             handleSubmit,
             reset,
@@ -45,31 +46,41 @@ class UserEdit extends Component {
                 {isLoading && (
                     <p>Loading...</p>
                 )}
-                <form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
-                    <div>
-                        <label htmlFor="username">Username</label>
-                        <Field name="username"
-                               component={this.renderField}
-                               validate={[required(), length({ minimum: 2 })]}/>
-                    </div>
-                    <div>
-                        <label htmlFor="enabled">Enabled</label>
-                        <Field name="enabled" component="input" type="checkbox"/>
-                    </div>
-                    <div>
-                        <label>Roles</label>
+
+                {initialValues && (
+                    <form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
                         <div>
-                            <Field name="roles" component="select" multiple={true}>
-                                <option value="ROLE_USER">User</option>
-                                <option value="ROLE_ADMIN">Admin</option>
-                            </Field>
+                            <Field name="username"
+                                   component={this.renderField}
+                                   label="Username"
+                                   validate={[required(), length({ minimum: 2 })]}/>
                         </div>
-                    </div>
-                    <div>
-                        <button type="submit" disabled={pristine || submitting}>Submit</button>
-                        <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
-                    </div>
-                </form>
+                        <div>
+                            <Field name="email"
+                                   component={this.renderField}
+                                   label="Email"
+                                   validate={[required(), email(), length({ minimum: 2 })]}/>
+                        </div>
+                        <div>
+                            <label htmlFor="enabled">Enabled</label>
+                            <Field name="enabled" component="input" type="checkbox"/>
+                        </div>
+                        <div>
+                            <label>Roles</label>
+                            <div>
+                                <Field name="roles" component="select" multiple={true}>
+                                    <option value="ROLE_USER">User</option>
+                                    <option value="ROLE_ADMIN">Admin</option>
+                                </Field>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" disabled={pristine || submitting}>Submit</button>
+                            <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values
+                            </button>
+                        </div>
+                    </form>
+                )}
             </div>
         );
     }

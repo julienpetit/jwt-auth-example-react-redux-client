@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import App from './containers/AppContainer';
 import { Switch, Route } from 'react-router';
+import PrivateRoute from './containers/PrivateRouteContainer';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,14 +22,14 @@ ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <App>
-                <Header/>
+                <Header />
                 <Switch>
                     <Route exact path="/" component={HomePage}/>
                     <Route exact path="/login" component={LoginPage}/>
                     <Route exact path="/logout" component={LogoutPage}/>
-                    <Route exact path="/users" component={UsersPage}/>
-                    <Route exact strict path="/user/:id/edit" component={UserEditPage}/>
-                    {/*<PrivateRoute exact path="/account" component={AccountPage}/>*/}
+                    <PrivateRoute exact path="/users" component={UsersPage}/>
+                    <PrivateRoute exact strict path="/user/:id/edit" component={UserEditPage}/>
+                    <PrivateRoute exact path="/account" component={AccountPage}/>
                 </Switch>
                 <Footer />
             </App>
