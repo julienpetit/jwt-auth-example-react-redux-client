@@ -1,44 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route } from 'react-router';
-
 import auth from '../modules/auth';
-import PrivateRoute from './PrivateRouteContainer';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import HomePage from '../pages/HomePage';
-import LoginPage from '../pages/LoginPage';
-import LogoutPage from '../pages/LogoutPage';
-import AccountPage from '../pages/AccountPage';
-
-class AppContainer extends React.Component {
+class AppContainer extends Component {
 
     componentWillMount() {
         this.props.dispatch(auth.actions.loginLoadTokenRequest());
     }
 
     render() {
-        const { location, isAuthenticated } = this.props;
+        const { children } = this.props;
 
         return (
             <div>
-                <Header isAuthenticated={isAuthenticated} />
-                <Switch location={location}>
-                    <Route exact path="/" component={HomePage}/>
-                    <Route exact path="/login" component={LoginPage}/>
-                    <Route exact path="/logout" component={LogoutPage}/>
-                    <PrivateRoute exact path="/account" component={AccountPage}/>
-                </Switch>
-                <Footer />
+                {children}
             </div>
         );
     }
 }
 
-const mapStateToProps = ({ auth, router }) => ({
-    location: router.location,
-    isAuthenticated: auth.isAuthenticated,
-});
-
-export default connect(mapStateToProps, dispatch => ({ dispatch }), null, { pure: false })(AppContainer);
+export default connect(null, dispatch => ({ dispatch }), null, { pure: false })(AppContainer);
