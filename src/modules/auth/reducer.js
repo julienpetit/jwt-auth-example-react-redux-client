@@ -4,6 +4,7 @@ const INITIAL_STATE = {
     token: null,
     tokenData: {},
     isAuthenticated: false,
+    isLoginChecked: false,
     isLoading: false,
     hasErrors: false,
 };
@@ -19,25 +20,35 @@ export default function (state = INITIAL_STATE, action) {
 
         case t.LOGIN_SUCCESS:
             return {
-                ...INITIAL_STATE,
+                ...state,
                 ...action.payload,
             };
 
         case t.LOGIN_FAILURE:
             return {
-                ...INITIAL_STATE,
+                ...state,
                 hasErrors: true,
+                isLoading: false,
             };
 
-        case t.LOGIN_LOAD_TOKEN_SUCCESS:
+        case t.LOGIN_REFRESH_TOKEN_SUCCESS:
             return {
                 ...INITIAL_STATE,
                 ...action.payload,
+                isAuthenticated: true,
+                isLoginChecked: true,
+            };
+
+        case t.LOGIN_REFRESH_TOKEN_FAILURE:
+            return {
+                ...INITIAL_STATE,
+                isLoginChecked: true,
             };
 
         case t.LOGOUT_SUCCESS:
             return {
                 ...INITIAL_STATE,
+                isLoginChecked: true,
             };
 
         default:

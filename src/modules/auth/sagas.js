@@ -1,8 +1,16 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeEvery, call, put, select } from 'redux-saga/effects';
 import { push } from 'react-router-redux';
 import jwtDecode from 'jwt-decode';
 import authApi from './api';
-import { loginSuccess, loginError, loginLoadTokenSuccess, logoutSuccess } from './actions';
+import {
+    loginSuccess,
+    loginError,
+    logoutSuccess,
+    loginRefreshTokenSuccess,
+    loginRefreshTokenError,
+    loginRefreshTokenRequest,
+    logoutRequest,
+} from './actions';
 import * as t from './actionTypes';
 import * as constants from './constants';
 
@@ -14,8 +22,10 @@ export function* authorize(action) {
         const payload = {
             tokenData,
             token: loginResult.token,
-            isAuthenticated: true,
         };
+
+        // Persist auth refresh token in localStorage
+        yield localStorage.setItem(constants.LS_REFRESH_TOKEN, loginResult.refresh_token);
 
         yield put(loginSuccess(payload));
     }
@@ -24,63 +34,77 @@ export function* authorize(action) {
     }
 }
 
-export function* persistAuthToken(action) {
-    // Persist auth token in localStorage
-    yield localStorage.setItem(constants.LS_TOKEN, JSON.stringify(action.payload.token));
-}
-
 export function* removeAuthToken() {
     // Remove auth token in localStorage
-    yield localStorage.removeItem(constants.LS_TOKEN);
+    yield localStorage.removeItem(constants.LS_REFRESH_TOKEN);
     yield put(logoutSuccess());
 }
-
 
 export function* redirectAfterLogin() {
     // Redirect to Home
     yield put(push('/'));
 }
 
-export function* loadToken() {
-    const storedToken = localStorage.getItem(constants.LS_TOKEN);
+export function* getToken() {
+    // Get token from the store
+    const token = yield select(({ auth }) => auth.token);
 
-    // if it exists
-    if (!storedToken) {
-        return false;
-    }
-
-    // parse it down into an object
-    const token = JSON.parse(storedToken);
+    // Decode JWT Token
     const tokenData = jwtDecode(token);
 
     // this just all works to compare the total seconds of the created
     // time of the token vs the ttl (time to live) seconds
-    const createdDate = new Date(tokenData.created);
-    const created = Math.round(createdDate.getTime() / 1000);
-    const ttl = 1209600;
-    const expiry = created + ttl;
+    const expiryDate = new Date(tokenData.exp * 1000);
+    const now = new Date();
+    // Compute the amount of minutes before expiration
+    const diffInMinutes = (expiryDate.getTime() - now.getTime()) / 60000;
 
-    // if the token has expired return false
-    if (created > expiry) return false;
+    if (diffInMinutes < 0) {
+        // If the token is expired, logout the user
+        yield put(logoutRequest());
+    } else if (diffInMinutes < 10) {
+        // If the token will expire soon, request a new token
+        yield put(loginRefreshTokenRequest());
+    }
 
-    const payload = {
-        token,
-        tokenData,
-        isAuthenticated: true,
-    };
-
-    // otherwise, dispatch the token to our setClient action
-    // which will update our redux state with the token and return true
-    yield put(loginLoadTokenSuccess(payload));
+    return token;
 }
 
+export function* refreshToken() {
+    const refreshToken = localStorage.getItem(constants.LS_REFRESH_TOKEN);
 
+    // if it exists
+    if (!refreshToken) {
+        yield put(loginRefreshTokenError());
+        return false;
+    }
+
+    try {
+        const result = yield call(authApi.refreshToken, refreshToken);
+
+        yield localStorage.setItem(constants.LS_REFRESH_TOKEN, result.refresh_token);
+
+        const payload = {
+            tokenData: jwtDecode(result.token),
+            token: result.token,
+        };
+
+        yield put(loginRefreshTokenSuccess(payload));
+    }
+    catch (error) {
+        yield put(loginRefreshTokenError(error));
+    }
+}
 
 export function* watchLoginFlow() {
+    // Login flow
     yield takeEvery(t.LOGIN_REQUEST, authorize);
     yield takeEvery(t.LOGIN_SUCCESS, redirectAfterLogin);
-    yield takeEvery(t.LOGIN_SUCCESS, persistAuthToken);
-    yield takeEvery(t.LOGIN_LOAD_TOKEN_REQUEST, loadToken);
+
+    // Login check flow
+    yield takeEvery(t.LOGIN_REFRESH_TOKEN_REQUEST, refreshToken);
+
+    // Logout flow
     yield takeEvery(t.LOGOUT_REQUEST, removeAuthToken);
 }
 

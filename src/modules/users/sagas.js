@@ -1,6 +1,7 @@
 import { takeEvery, call, put, select } from 'redux-saga/effects';
 import api from './api';
 import * as t from './actionTypes';
+import { getToken } from '../auth/sagas';
 import {
     fetchSuccess,
     fetchFailure,
@@ -11,8 +12,9 @@ import {
 } from './actions';
 
 export function* getAllUsers(action) {
+
     try {
-        const token = yield select(({ auth }) => auth.token);
+        const token = yield getToken();
         const result = yield call(api.getAll, action, token);
         yield put(fetchListSuccess(result));
     }
@@ -23,7 +25,7 @@ export function* getAllUsers(action) {
 
 export function* getUser(action) {
     try {
-        const token = yield select(({ auth }) => auth.token);
+        const token = yield getToken();
         const loginResult = yield call(api.get, action, token);
         yield put(fetchSuccess(loginResult));
     }
@@ -34,7 +36,7 @@ export function* getUser(action) {
 
 export function* updateUser(action) {
     try {
-        const token = yield select(({ auth }) => auth.token);
+        const token = yield getToken();
         const loginResult = yield call(api.update, action, token);
         yield put(updateSuccess(loginResult));
     }

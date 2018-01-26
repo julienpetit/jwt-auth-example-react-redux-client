@@ -19,7 +19,6 @@ const Header = ({ isAuthenticated = false }) => (
 
         <NavLink to="/account" exact activeClassName='active'>Account</NavLink>
         <NavLink to="/users" exact activeClassName='active'>Users</NavLink>
-
     </header>
 );
 

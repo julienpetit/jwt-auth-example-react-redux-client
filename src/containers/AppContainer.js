@@ -5,22 +5,26 @@ import auth from '../modules/auth';
 class AppContainer extends Component {
 
     componentWillMount() {
-        this.props.dispatch(auth.actions.loginLoadTokenRequest());
+        this.props.dispatch(auth.actions.loginRefreshTokenRequest());
     }
 
     render() {
-        const { children, isAuthenticated } = this.props;
+        const { children, isAuthenticated, isLoginChecked } = this.props;
 
         return (
             <div>
-                {React.Children.map(children, (child) => React.cloneElement(child, { isAuthenticated }))}
+                {isLoginChecked ? (
+                    React.Children.map(children, (child) => React.cloneElement(child, { isAuthenticated }))
+                ) : (
+                    <p>Loading</p>
+                )}
             </div>
         );
     }
 }
 
 export default connect(
-    ({ auth }) => ({ isAuthenticated: auth.isAuthenticated }),
+    ({ auth }) => ({ isAuthenticated: auth.isAuthenticated, isLoginChecked: auth.isLoginChecked }),
     dispatch => ({ dispatch }),
     null,
     { pure: false }

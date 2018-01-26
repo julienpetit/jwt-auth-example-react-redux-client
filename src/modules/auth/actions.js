@@ -15,13 +15,19 @@ export const loginError = (payload) => ({
     payload,
 });
 
-export const loginLoadTokenRequest = () => ({
-    type: t.LOGIN_LOAD_TOKEN_REQUEST,
+export const loginRefreshTokenRequest = (payload) => ({
+    type: t.LOGIN_REFRESH_TOKEN_REQUEST,
+    payload,
 });
 
-export const loginLoadTokenSuccess = (token) => ({
-    type: t.LOGIN_LOAD_TOKEN_SUCCESS,
-    payload: token,
+export const loginRefreshTokenSuccess = (payload) => ({
+    type: t.LOGIN_REFRESH_TOKEN_SUCCESS,
+    payload,
+});
+
+export const loginRefreshTokenError = (payload) => ({
+    type: t.LOGIN_REFRESH_TOKEN_FAILURE,
+    payload,
 });
 
 export const logoutRequest = () => ({
@@ -31,3 +37,4 @@ export const logoutRequest = () => ({
 export const logoutSuccess = () => ({
     type: t.LOGOUT_SUCCESS,
 });
+
