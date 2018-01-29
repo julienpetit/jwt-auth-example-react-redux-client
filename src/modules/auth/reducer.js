@@ -14,14 +14,17 @@ export default function (state = INITIAL_STATE, action) {
 
         case t.LOGIN_REQUEST:
             return {
-                ...INITIAL_STATE,
+                ...state,
                 isLoading: true,
             };
 
         case t.LOGIN_SUCCESS:
+        case t.LOGIN_REFRESH_TOKEN_SUCCESS:
             return {
                 ...state,
                 ...action.payload,
+                isAuthenticated: true,
+                isLoginChecked: true,
             };
 
         case t.LOGIN_FAILURE:
@@ -29,14 +32,6 @@ export default function (state = INITIAL_STATE, action) {
                 ...state,
                 hasErrors: true,
                 isLoading: false,
-            };
-
-        case t.LOGIN_REFRESH_TOKEN_SUCCESS:
-            return {
-                ...INITIAL_STATE,
-                ...action.payload,
-                isAuthenticated: true,
-                isLoginChecked: true,
             };
 
         case t.LOGIN_REFRESH_TOKEN_FAILURE:

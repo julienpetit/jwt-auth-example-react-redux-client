@@ -1,13 +1,19 @@
 import * as t from './actionTypes';
 
-export const loginRequest = (payload) => ({
+export const loginRequest = (username, password) => ({
     type: t.LOGIN_REQUEST,
-    payload,
+    payload: {
+        username,
+        password,
+    },
 });
 
-export const loginSuccess = (payload) => ({
+export const loginSuccess = (token, tokenData) => ({
     type: t.LOGIN_SUCCESS,
-    payload,
+    payload: {
+        token,
+        tokenData,
+    },
 });
 
 export const loginError = (payload) => ({

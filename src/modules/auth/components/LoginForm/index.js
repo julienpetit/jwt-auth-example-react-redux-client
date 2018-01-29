@@ -17,8 +17,8 @@ class LoginForm extends Component {
         }),
     };
 
-    submit = (values) => {
-        this.props.loginRequest(values)
+    submit = ({ username, password }) => {
+        this.props.loginRequest(username, password)
     };
 
     render() {

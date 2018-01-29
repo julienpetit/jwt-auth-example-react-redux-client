@@ -8,68 +8,74 @@ import {
     logoutSuccess,
     loginRefreshTokenSuccess,
     loginRefreshTokenError,
-    loginRefreshTokenRequest,
-    logoutRequest,
 } from './actions';
 import * as t from './actionTypes';
 import * as constants from './constants';
 
+/**
+ * authorize Effect
+ * call login api and persist the refresh token in the localstorage
+ *
+ * @param action
+ */
 export function* authorize(action) {
     try {
         const loginResult = yield call(authApi.login, action);
         const tokenData = jwtDecode(loginResult.token);
 
-        const payload = {
-            tokenData,
-            token: loginResult.token,
-        };
-
         // Persist auth refresh token in localStorage
         yield localStorage.setItem(constants.LS_REFRESH_TOKEN, loginResult.refresh_token);
 
-        yield put(loginSuccess(payload));
+        yield put(loginSuccess(loginResult.token, tokenData));
     }
     catch (error) {
         yield put(loginError(error));
     }
 }
 
+/**
+ * Remove the token from localstorage
+ */
 export function* removeAuthToken() {
     // Remove auth token in localStorage
     yield localStorage.removeItem(constants.LS_REFRESH_TOKEN);
     yield put(logoutSuccess());
 }
 
+/**
+ * Redirect after the login
+ */
 export function* redirectAfterLogin() {
     // Redirect to Home
     yield put(push('/'));
 }
 
+/**
+ * Check is a token is valid
+ * If the token will exipired in the next 10 minutes, ask to a new token
+ * @returns {*}
+ */
 export function* getToken() {
     // Get token from the store
-    const token = yield select(({ auth }) => auth.token);
+    const tokenData = yield select(({ auth }) => auth.tokenData);
 
-    // Decode JWT Token
-    const tokenData = jwtDecode(token);
-
-    // this just all works to compare the total seconds of the created
-    // time of the token vs the ttl (time to live) seconds
-    const expiryDate = new Date(tokenData.exp * 1000);
+    const expireAt = new Date(tokenData.exp * 1000);
     const now = new Date();
     // Compute the amount of minutes before expiration
-    const diffInMinutes = (expiryDate.getTime() - now.getTime()) / 60000;
+    const diffInMinutes = (expireAt.getTime() - now.getTime()) / 60000;
 
-    if (diffInMinutes < 0) {
-        // If the token is expired, logout the user
-        yield put(logoutRequest());
-    } else if (diffInMinutes < 10) {
+    if (diffInMinutes < 10) {
         // If the token will expire soon, request a new token
-        yield put(loginRefreshTokenRequest());
+        yield call(refreshToken);
     }
 
-    return token;
+    return yield select(({ auth }) => auth.token);
 }
 
+/**
+ * Refresh the token with the refresh token stored in localStorage
+ * @returns {boolean}
+ */
 export function* refreshToken() {
     const refreshToken = localStorage.getItem(constants.LS_REFRESH_TOKEN);
 
@@ -96,6 +102,9 @@ export function* refreshToken() {
     }
 }
 
+/**
+ * Redux Saga flow
+ */
 export function* watchLoginFlow() {
     // Login flow
     yield takeEvery(t.LOGIN_REQUEST, authorize);
