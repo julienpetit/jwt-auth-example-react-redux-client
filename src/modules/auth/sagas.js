@@ -90,12 +90,10 @@ export function* refreshToken() {
 
         yield localStorage.setItem(constants.LS_REFRESH_TOKEN, result.refresh_token);
 
-        const payload = {
-            tokenData: jwtDecode(result.token),
-            token: result.token,
-        };
+        const tokenData = jwtDecode(result.token);
+        const token = result.token;
 
-        yield put(loginRefreshTokenSuccess(payload));
+        yield put(loginRefreshTokenSuccess(token, tokenData));
     }
     catch (error) {
         yield put(loginRefreshTokenError(error));

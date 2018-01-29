@@ -26,9 +26,12 @@ export const loginRefreshTokenRequest = (payload) => ({
     payload,
 });
 
-export const loginRefreshTokenSuccess = (payload) => ({
+export const loginRefreshTokenSuccess = (token, tokenData) => ({
     type: t.LOGIN_REFRESH_TOKEN_SUCCESS,
-    payload,
+    payload: {
+        token,
+        tokenData,
+    },
 });
 
 export const loginRefreshTokenError = (payload) => ({

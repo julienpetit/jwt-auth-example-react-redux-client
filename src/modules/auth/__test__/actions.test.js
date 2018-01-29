@@ -52,13 +52,17 @@ describe('actions', () => {
     });
 
     it('should create an action to success a new token', () => {
-        const payload = {};
+        const token = 'A42DJEICNF2';
+        const tokenData = {};
 
         const expectedAction = {
             type: t.LOGIN_REFRESH_TOKEN_SUCCESS,
-            payload: {},
+            payload: {
+                token: 'A42DJEICNF2',
+                tokenData: {},
+            },
         };
-        expect(actions.loginRefreshTokenSuccess(payload)).toEqual(expectedAction);
+        expect(actions.loginRefreshTokenSuccess(token, tokenData)).toEqual(expectedAction);
     });
 
     it('should create an action to fail a new token', () => {
