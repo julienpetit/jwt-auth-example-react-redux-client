@@ -1,7 +1,7 @@
-import { takeEvery, call, put, select } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 import api from './api';
 import * as t from './actionTypes';
-import { getToken } from '../auth/sagas';
+import { getToken } from '../auth/sagas';
 import {
     fetchSuccess,
     fetchFailure,
@@ -12,7 +12,6 @@ import {
 } from './actions';
 
 export function* getAllUsers(action) {
-
     try {
         const token = yield getToken();
         const result = yield call(api.getAll, action, token);

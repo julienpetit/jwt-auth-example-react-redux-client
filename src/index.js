@@ -17,6 +17,7 @@ import UserEditPage from './modules/users/components/UserEdit';
 
 import store, { history } from './store';
 import registerServiceWorker from './registerServiceWorker';
+import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(
     <Provider store={store}>

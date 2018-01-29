@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Dimmer, Loader } from 'semantic-ui-react';
+
 import auth from '../modules/auth';
 
 class AppContainer extends Component {
@@ -16,7 +18,9 @@ class AppContainer extends Component {
                 {isLoginChecked ? (
                     React.Children.map(children, (child) => React.cloneElement(child, { isAuthenticated }))
                 ) : (
-                    <p>Loading</p>
+                    <Dimmer active inverted>
+                        <Loader />
+                    </Dimmer>
                 )}
             </div>
         );
