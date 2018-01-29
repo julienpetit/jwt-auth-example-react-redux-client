@@ -24,7 +24,7 @@ export function* authorize(action) {
         const tokenData = jwtDecode(loginResult.token);
 
         // Persist auth refresh token in localStorage
-        yield localStorage.setItem(constants.LS_REFRESH_TOKEN, loginResult.refresh_token);
+        localStorage.setItem(constants.LS_REFRESH_TOKEN, loginResult.refresh_token);
 
         yield put(loginSuccess(loginResult.token, tokenData));
     }
@@ -38,7 +38,7 @@ export function* authorize(action) {
  */
 export function* removeAuthToken() {
     // Remove auth token in localStorage
-    yield localStorage.removeItem(constants.LS_REFRESH_TOKEN);
+    localStorage.removeItem(constants.LS_REFRESH_TOKEN);
     yield put(logoutSuccess());
 }
 
@@ -88,7 +88,7 @@ export function* refreshToken() {
     try {
         const result = yield call(authApi.refreshToken, refreshToken);
 
-        yield localStorage.setItem(constants.LS_REFRESH_TOKEN, result.refresh_token);
+        localStorage.setItem(constants.LS_REFRESH_TOKEN, result.refresh_token);
 
         const tokenData = jwtDecode(result.token);
         const token = result.token;
