@@ -6,6 +6,7 @@ import { Dimmer, Loader } from 'semantic-ui-react';
 import Header from './components/Header';
 import routes from './routes';
 import auth from './modules/auth';
+import './app.css';
 
 class App extends Component {
   static propTypes = {

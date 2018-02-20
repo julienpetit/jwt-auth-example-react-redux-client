@@ -23,3 +23,11 @@ This command will start the web server.
 npm test
 ```
 This command will start the tests.
+
+## Deploy
+
+```
+npm run build
+cd build
+surge
+```
