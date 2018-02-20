@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/julienpetit/jwt-auth-example-react-redux-client.svg?branch=master)](https://travis-ci.org/julienpetit/jwt-auth-example-react-redux-client)
+
 # JWT auth client using react, redux and redux-sagas
 
 ## prerequisite
