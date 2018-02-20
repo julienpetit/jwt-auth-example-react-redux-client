@@ -11,13 +11,13 @@ const sagaMiddleware = createSagaMiddleware(rootSaga);
 export const history = createHistory();
 
 const store = createStore(
-    rootReducer,
-    {},
-    compose (
-        applyMiddleware(sagaMiddleware),
-        applyMiddleware(routerMiddleware(history)),
-        applyMiddleware(logger),
-    )
+  rootReducer,
+  {},
+  compose(
+    applyMiddleware(sagaMiddleware),
+    applyMiddleware(routerMiddleware(history)),
+    applyMiddleware(logger)
+  )
 );
 
 sagaMiddleware.run(rootSaga);

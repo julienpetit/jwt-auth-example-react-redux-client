@@ -3,51 +3,48 @@ import api from './api';
 import * as t from './actionTypes';
 import { getToken } from '../auth/sagas';
 import {
-    fetchSuccess,
-    fetchFailure,
-    fetchListSuccess,
-    fetchListFailure,
-    updateSuccess,
-    updateFailure,
+  fetchSuccess,
+  fetchFailure,
+  fetchListSuccess,
+  fetchListFailure,
+  updateSuccess,
+  updateFailure
 } from './actions';
 
 export function* getAllUsers(action) {
-    try {
-        const token = yield getToken();
-        const result = yield call(api.getAll, action, token);
-        yield put(fetchListSuccess(result));
-    }
-    catch (error) {
-        yield put(fetchListFailure(error));
-    }
+  try {
+    const token = yield getToken();
+    const result = yield call(api.getAll, action, token);
+    yield put(fetchListSuccess(result));
+  } catch (error) {
+    yield put(fetchListFailure(error));
+  }
 }
 
 export function* getUser(action) {
-    try {
-        const token = yield getToken();
-        const loginResult = yield call(api.get, action, token);
-        yield put(fetchSuccess(loginResult));
-    }
-    catch (error) {
-        yield put(fetchFailure(error));
-    }
+  try {
+    const token = yield getToken();
+    const loginResult = yield call(api.get, action, token);
+    yield put(fetchSuccess(loginResult));
+  } catch (error) {
+    yield put(fetchFailure(error));
+  }
 }
 
 export function* updateUser(action) {
-    try {
-        const token = yield getToken();
-        const loginResult = yield call(api.update, action, token);
-        yield put(updateSuccess(loginResult));
-    }
-    catch (error) {
-        yield put(updateFailure(error));
-    }
+  try {
+    const token = yield getToken();
+    const loginResult = yield call(api.update, action, token);
+    yield put(updateSuccess(loginResult));
+  } catch (error) {
+    yield put(updateFailure(error));
+  }
 }
 
 export function* watchLoginFlow() {
-    yield takeEvery(t.FETCH_LIST_REQUEST, getAllUsers);
-    yield takeEvery(t.FETCH_REQUEST, getUser);
-    yield takeEvery(t.UPDATE_REQUEST, updateUser);
+  yield takeEvery(t.FETCH_LIST_REQUEST, getAllUsers);
+  yield takeEvery(t.FETCH_REQUEST, getUser);
+  yield takeEvery(t.UPDATE_REQUEST, updateUser);
 }
 
 export default watchLoginFlow;

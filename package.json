@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "enzyme": "^3.3.0",
+    "husky": "^0.14.3",
     "jwt-decode": "auth0/jwt-decode",
+    "lint-staged": "^6.1.1",
+    "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -20,8 +23,15 @@
     "semantic-ui-css": "^2.2.14",
     "semantic-ui-react": "^0.77.2"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
+    "precommit": "lint-staged",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

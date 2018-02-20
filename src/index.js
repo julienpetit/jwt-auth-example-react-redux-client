@@ -20,21 +20,27 @@ import registerServiceWorker from './registerServiceWorker';
 import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <App>
-                <Header />
-                <Switch>
-                    <Route exact path="/" component={HomePage}/>
-                    <Route exact path="/login" component={LoginPage}/>
-                    <Route exact path="/logout" component={LogoutPage}/>
-                    <PrivateRoute exact path="/users" component={UsersPage}/>
-                    <PrivateRoute exact strict path="/user/:id/edit" component={UserEditPage}/>
-                    <PrivateRoute exact path="/account" component={AccountPage}/>
-                </Switch>
-                <Footer />
-            </App>
-        </ConnectedRouter>
-    </Provider>, document.getElementById('root')
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/logout" component={LogoutPage} />
+          <PrivateRoute exact path="/users" component={UsersPage} />
+          <PrivateRoute
+            exact
+            strict
+            path="/user/:id/edit"
+            component={UserEditPage}
+          />
+          <PrivateRoute exact path="/account" component={AccountPage} />
+        </Switch>
+        <Footer />
+      </App>
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('root')
 );
 registerServiceWorker();

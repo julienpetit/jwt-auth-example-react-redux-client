@@ -20,40 +20,47 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <img
-          alt="logo"
-          className="App-logo"
-          src="logo.svg"
-/>,
         <h1
           className="App-title"
 >
-          Welcome to React - Redux boilerplate
+          Welcome to React
 </h1>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          exact={true}
-          to="/"
+        <Menu
+          pointing={true}
 >
-          Home
-</NavLink>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          exact={true}
-          to="/logout"
->
-          Logout
-</NavLink>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          exact={true}
-          to="/account"
->
-          Account
-</NavLink>,
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Home"
+                    to="/"
+          />
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Account"
+                    to="/account"
+          />
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Users"
+                    to="/users"
+          />
+          <MenuMenu
+                    position="right"
+          >
+                    <MenuItem
+                              activeClassName="active"
+                              as={[Function]}
+                              exact={true}
+                              name="Logout"
+                              to="/logout"
+                    />
+          </MenuMenu>
+</Menu>,
       ],
       "className": "App-header",
     },
@@ -64,69 +71,134 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "alt": "logo",
-          "className": "App-logo",
-          "src": "logo.svg",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Welcome to React - Redux boilerplate",
+          "children": "Welcome to React",
           "className": "App-title",
         },
         "ref": null,
-        "rendered": "Welcome to React - Redux boilerplate",
+        "rendered": "Welcome to React",
         "type": "h1",
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Home",
-          "exact": true,
-          "to": "/",
+          "children": Array [
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
+              name="Home"
+              to="/"
+/>,
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
+              name="Account"
+              to="/account"
+/>,
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
+              name="Users"
+              to="/users"
+/>,
+            <MenuMenu
+              position="right"
+>
+              <MenuItem
+                            activeClassName="active"
+                            as={[Function]}
+                            exact={true}
+                            name="Logout"
+                            to="/logout"
+              />
+</MenuMenu>,
+          ],
+          "pointing": true,
         },
         "ref": null,
-        "rendered": "Home",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Logout",
-          "exact": true,
-          "to": "/logout",
-        },
-        "ref": null,
-        "rendered": "Logout",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Account",
-          "exact": true,
-          "to": "/account",
-        },
-        "ref": null,
-        "rendered": "Account",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Home",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Account",
+              "to": "/account",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Users",
+              "to": "/users",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Logout"
+                to="/logout"
+/>,
+              "position": "right",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Logout",
+                "to": "/logout",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
         "type": [Function],
       },
     ],
@@ -139,40 +211,47 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <img
-            alt="logo"
-            className="App-logo"
-            src="logo.svg"
-/>,
           <h1
             className="App-title"
 >
-            Welcome to React - Redux boilerplate
+            Welcome to React
 </h1>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            exact={true}
-            to="/"
+          <Menu
+            pointing={true}
 >
-            Home
-</NavLink>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            exact={true}
-            to="/logout"
->
-            Logout
-</NavLink>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            exact={true}
-            to="/account"
->
-            Account
-</NavLink>,
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
+                        name="Home"
+                        to="/"
+            />
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
+                        name="Account"
+                        to="/account"
+            />
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
+                        name="Users"
+                        to="/users"
+            />
+            <MenuMenu
+                        position="right"
+            >
+                        <MenuItem
+                                    activeClassName="active"
+                                    as={[Function]}
+                                    exact={true}
+                                    name="Logout"
+                                    to="/logout"
+                        />
+            </MenuMenu>
+</Menu>,
         ],
         "className": "App-header",
       },
@@ -183,69 +262,134 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "alt": "logo",
-            "className": "App-logo",
-            "src": "logo.svg",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Welcome to React - Redux boilerplate",
+            "children": "Welcome to React",
             "className": "App-title",
           },
           "ref": null,
-          "rendered": "Welcome to React - Redux boilerplate",
+          "rendered": "Welcome to React",
           "type": "h1",
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Home",
-            "exact": true,
-            "to": "/",
+            "children": Array [
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Home"
+                to="/"
+/>,
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Account"
+                to="/account"
+/>,
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Users"
+                to="/users"
+/>,
+              <MenuMenu
+                position="right"
+>
+                <MenuItem
+                                activeClassName="active"
+                                as={[Function]}
+                                exact={true}
+                                name="Logout"
+                                to="/logout"
+                />
+</MenuMenu>,
+            ],
+            "pointing": true,
           },
           "ref": null,
-          "rendered": "Home",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Logout",
-            "exact": true,
-            "to": "/logout",
-          },
-          "ref": null,
-          "rendered": "Logout",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Account",
-            "exact": true,
-            "to": "/account",
-          },
-          "ref": null,
-          "rendered": "Account",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Home",
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Account",
+                "to": "/account",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Users",
+                "to": "/users",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <MenuItem
+                  activeClassName="active"
+                  as={[Function]}
+                  exact={true}
+                  name="Logout"
+                  to="/logout"
+/>,
+                "position": "right",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "activeClassName": "active",
+                  "as": [Function],
+                  "exact": true,
+                  "name": "Logout",
+                  "to": "/logout",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
       ],
@@ -282,40 +426,47 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <img
-          alt="logo"
-          className="App-logo"
-          src="logo.svg"
-/>,
         <h1
           className="App-title"
 >
-          Welcome to React - Redux boilerplate
+          Welcome to React
 </h1>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          exact={true}
-          to="/"
+        <Menu
+          pointing={true}
 >
-          Home
-</NavLink>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          exact={true}
-          to="/login"
->
-          Login
-</NavLink>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          exact={true}
-          to="/account"
->
-          Account
-</NavLink>,
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Home"
+                    to="/"
+          />
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Account"
+                    to="/account"
+          />
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Users"
+                    to="/users"
+          />
+          <MenuMenu
+                    position="right"
+          >
+                    <MenuItem
+                              activeClassName="active"
+                              as={[Function]}
+                              exact={true}
+                              name="Login"
+                              to="/login"
+                    />
+          </MenuMenu>
+</Menu>,
       ],
       "className": "App-header",
     },
@@ -326,69 +477,134 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "alt": "logo",
-          "className": "App-logo",
-          "src": "logo.svg",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Welcome to React - Redux boilerplate",
+          "children": "Welcome to React",
           "className": "App-title",
         },
         "ref": null,
-        "rendered": "Welcome to React - Redux boilerplate",
+        "rendered": "Welcome to React",
         "type": "h1",
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Home",
-          "exact": true,
-          "to": "/",
+          "children": Array [
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
+              name="Home"
+              to="/"
+/>,
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
+              name="Account"
+              to="/account"
+/>,
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
+              name="Users"
+              to="/users"
+/>,
+            <MenuMenu
+              position="right"
+>
+              <MenuItem
+                            activeClassName="active"
+                            as={[Function]}
+                            exact={true}
+                            name="Login"
+                            to="/login"
+              />
+</MenuMenu>,
+          ],
+          "pointing": true,
         },
         "ref": null,
-        "rendered": "Home",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Login",
-          "exact": true,
-          "to": "/login",
-        },
-        "ref": null,
-        "rendered": "Login",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Account",
-          "exact": true,
-          "to": "/account",
-        },
-        "ref": null,
-        "rendered": "Account",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Home",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Account",
+              "to": "/account",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Users",
+              "to": "/users",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Login"
+                to="/login"
+/>,
+              "position": "right",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Login",
+                "to": "/login",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
         "type": [Function],
       },
     ],
@@ -401,40 +617,47 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <img
-            alt="logo"
-            className="App-logo"
-            src="logo.svg"
-/>,
           <h1
             className="App-title"
 >
-            Welcome to React - Redux boilerplate
+            Welcome to React
 </h1>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            exact={true}
-            to="/"
+          <Menu
+            pointing={true}
 >
-            Home
-</NavLink>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            exact={true}
-            to="/login"
->
-            Login
-</NavLink>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            exact={true}
-            to="/account"
->
-            Account
-</NavLink>,
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
+                        name="Home"
+                        to="/"
+            />
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
+                        name="Account"
+                        to="/account"
+            />
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
+                        name="Users"
+                        to="/users"
+            />
+            <MenuMenu
+                        position="right"
+            >
+                        <MenuItem
+                                    activeClassName="active"
+                                    as={[Function]}
+                                    exact={true}
+                                    name="Login"
+                                    to="/login"
+                        />
+            </MenuMenu>
+</Menu>,
         ],
         "className": "App-header",
       },
@@ -445,69 +668,134 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "alt": "logo",
-            "className": "App-logo",
-            "src": "logo.svg",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Welcome to React - Redux boilerplate",
+            "children": "Welcome to React",
             "className": "App-title",
           },
           "ref": null,
-          "rendered": "Welcome to React - Redux boilerplate",
+          "rendered": "Welcome to React",
           "type": "h1",
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Home",
-            "exact": true,
-            "to": "/",
+            "children": Array [
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Home"
+                to="/"
+/>,
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Account"
+                to="/account"
+/>,
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
+                name="Users"
+                to="/users"
+/>,
+              <MenuMenu
+                position="right"
+>
+                <MenuItem
+                                activeClassName="active"
+                                as={[Function]}
+                                exact={true}
+                                name="Login"
+                                to="/login"
+                />
+</MenuMenu>,
+            ],
+            "pointing": true,
           },
           "ref": null,
-          "rendered": "Home",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Login",
-            "exact": true,
-            "to": "/login",
-          },
-          "ref": null,
-          "rendered": "Login",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Account",
-            "exact": true,
-            "to": "/account",
-          },
-          "ref": null,
-          "rendered": "Account",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Home",
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Account",
+                "to": "/account",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Users",
+                "to": "/users",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <MenuItem
+                  activeClassName="active"
+                  as={[Function]}
+                  exact={true}
+                  name="Login"
+                  to="/login"
+/>,
+                "position": "right",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "activeClassName": "active",
+                  "as": [Function],
+                  "exact": true,
+                  "name": "Login",
+                  "to": "/login",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
       ],
