@@ -5,11 +5,22 @@ import api from '../api';
 import { call, put } from 'redux-saga/effects';
 import { push } from 'react-router-redux';
 
-describe('sagas authorize', () => {
-    const gen = sagas.authorize({});
+describe("sagas authorize", () => {
+    const action = {
+        type: "ACTIONTYPE",
+        payload: {},
+    };
+    const gen = sagas.authorize(action);
 
-    it('authorize should call login api and save the refresh token', () => {
-        expect(gen.next().value).toEqual(call(api.login, {}));
+    it("authorize should call login api and save the refresh token", () => {
+        expect(gen.next().value).toEqual(call(api.login, action));
+    });
+
+    it("authorize should put an error", () => {
+        const message = "Cannot read property 'token' of undefined";
+
+        expect(gen.next().value).toEqual(put(actions.loginError(message)));
+        expect(gen.next().done).toBeTruthy();
     });
 });
 

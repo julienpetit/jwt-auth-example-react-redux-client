@@ -27,9 +27,8 @@ export function* authorize(action) {
         localStorage.setItem(constants.LS_REFRESH_TOKEN, loginResult.refresh_token);
 
         yield put(loginSuccess(loginResult.token, tokenData));
-    }
-    catch (error) {
-        yield put(loginError(error));
+    } catch (error) {
+        yield put(loginError(error.message));
     }
 }
 
@@ -62,7 +61,7 @@ export function* getToken() {
     const expireAt = new Date(tokenData.exp * 1000);
     const now = new Date();
     // Compute the amount of minutes before expiration
-    const diffInMinutes = (expireAt.getTime() - now.getTime()) / 60000;
+    const diffInMinutes = (expireAt.getTime() - now.getTime()) / 1000;
 
     if (diffInMinutes < 10) {
         // If the token will expire soon, request a new token
@@ -94,8 +93,7 @@ export function* refreshToken() {
         const token = result.token;
 
         yield put(loginRefreshTokenSuccess(token, tokenData));
-    }
-    catch (error) {
+    } catch (error) {
         yield put(loginRefreshTokenError(error));
     }
 }
