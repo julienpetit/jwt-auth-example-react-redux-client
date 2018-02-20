@@ -1,4 +1,4 @@
-# stellarvore-webapp
+# JWT auth client using react, redux and redux-sagas
 
 ## prerequisite
 You must have setup the stellarvore-server
