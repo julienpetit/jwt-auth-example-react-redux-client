@@ -22,6 +22,15 @@ const Header = ({ isAuthenticated = false }) => (
         activeClassName="active"
         name="Account"
       />
+
+      <Menu.Item
+        as={NavLink}
+        to="/register"
+        exact
+        activeClassName="active"
+        name="Register"
+      />
+
       <Menu.Item
         as={NavLink}
         to="/users"

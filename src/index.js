@@ -14,6 +14,7 @@ import LogoutPage from './pages/LogoutPage';
 import AccountPage from './pages/AccountPage';
 import UsersPage from './pages/UsersPage';
 import UserEditPage from './modules/users/components/UserEdit';
+import RegisterPage from './pages/RegisterPage';
 
 import store, { history } from './store';
 import registerServiceWorker from './registerServiceWorker';
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/register" component={RegisterPage} />
           <Route exact path="/logout" component={LogoutPage} />
           <PrivateRoute exact path="/users" component={UsersPage} />
           <PrivateRoute

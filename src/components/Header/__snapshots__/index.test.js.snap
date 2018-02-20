@@ -46,6 +46,13 @@ ShallowWrapper {
                     activeClassName="active"
                     as={[Function]}
                     exact={true}
+                    name="Register"
+                    to="/register"
+          />
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
                     name="Users"
                     to="/users"
           />
@@ -102,6 +109,13 @@ ShallowWrapper {
               activeClassName="active"
               as={[Function]}
               exact={true}
+              name="Register"
+              to="/register"
+/>,
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
               name="Users"
               to="/users"
 />,
@@ -146,6 +160,21 @@ ShallowWrapper {
               "exact": true,
               "name": "Account",
               "to": "/account",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Register",
+              "to": "/register",
             },
             "ref": null,
             "rendered": null,
@@ -237,6 +266,13 @@ ShallowWrapper {
                         activeClassName="active"
                         as={[Function]}
                         exact={true}
+                        name="Register"
+                        to="/register"
+            />
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
                         name="Users"
                         to="/users"
             />
@@ -293,6 +329,13 @@ ShallowWrapper {
                 activeClassName="active"
                 as={[Function]}
                 exact={true}
+                name="Register"
+                to="/register"
+/>,
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
                 name="Users"
                 to="/users"
 />,
@@ -337,6 +380,21 @@ ShallowWrapper {
                 "exact": true,
                 "name": "Account",
                 "to": "/account",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Register",
+                "to": "/register",
               },
               "ref": null,
               "rendered": null,
@@ -452,6 +510,13 @@ ShallowWrapper {
                     activeClassName="active"
                     as={[Function]}
                     exact={true}
+                    name="Register"
+                    to="/register"
+          />
+          <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
                     name="Users"
                     to="/users"
           />
@@ -508,6 +573,13 @@ ShallowWrapper {
               activeClassName="active"
               as={[Function]}
               exact={true}
+              name="Register"
+              to="/register"
+/>,
+            <MenuItem
+              activeClassName="active"
+              as={[Function]}
+              exact={true}
               name="Users"
               to="/users"
 />,
@@ -552,6 +624,21 @@ ShallowWrapper {
               "exact": true,
               "name": "Account",
               "to": "/account",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeClassName": "active",
+              "as": [Function],
+              "exact": true,
+              "name": "Register",
+              "to": "/register",
             },
             "ref": null,
             "rendered": null,
@@ -643,6 +730,13 @@ ShallowWrapper {
                         activeClassName="active"
                         as={[Function]}
                         exact={true}
+                        name="Register"
+                        to="/register"
+            />
+            <MenuItem
+                        activeClassName="active"
+                        as={[Function]}
+                        exact={true}
                         name="Users"
                         to="/users"
             />
@@ -699,6 +793,13 @@ ShallowWrapper {
                 activeClassName="active"
                 as={[Function]}
                 exact={true}
+                name="Register"
+                to="/register"
+/>,
+              <MenuItem
+                activeClassName="active"
+                as={[Function]}
+                exact={true}
                 name="Users"
                 to="/users"
 />,
@@ -743,6 +844,21 @@ ShallowWrapper {
                 "exact": true,
                 "name": "Account",
                 "to": "/account",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeClassName": "active",
+                "as": [Function],
+                "exact": true,
+                "name": "Register",
+                "to": "/register",
               },
               "ref": null,
               "rendered": null,
