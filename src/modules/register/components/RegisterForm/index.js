@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import PropTypes from 'prop-types';
+import { Button, Form, Message, Loader } from 'semantic-ui-react';
 import { required, length, confirmation, email } from 'redux-form-validators';
+import Input from '../../../../components/form/Input';
 
 class RegisterForm extends Component {
   static propTypes = {
@@ -23,63 +25,51 @@ class RegisterForm extends Component {
     this.props.registerRequest(user);
   }
 
-  renderField({ input, label, type, meta: { touched, error, warning } }) {
-    return (
-      <div>
-        <label htmlFor={input.name}>{label}</label>
-        <div>
-          <input {...input} placeholder={label} type={type} />
-        </div>
-        {touched &&
-          ((error && <span>{error}</span>) ||
-            (warning && <span>{warning}</span>))}
-      </div>
-    );
-  }
-
   render() {
     const { handleSubmit, isLoading, hasErrors, isCreated, user } = this.props;
 
     return (
       <div>
-        {isLoading && <p>Loading...</p>}
-        {hasErrors && <p>Unable to register</p>}
+        <Loader active={isLoading} inline="centered" />
+
+        {!isLoading &&
+          hasErrors && <Message error header="Unable to register." />}
         {isCreated && <p>Bienvenue {user.username} !</p>}
 
         {!isCreated && (
-          <form onSubmit={handleSubmit(this.submit)}>
+          <Form onSubmit={handleSubmit(this.submit)}>
             <Field
               name="username"
-              component={this.renderField}
+              component={Input}
               type="text"
               label="Username"
               validate={[required(), length({ minimum: 3 })]}
             />
             <Field
               name="email"
-              component={this.renderField}
+              component={Input}
               type="text"
               label="Email"
               validate={[required(), length({ minimum: 3 }, email())]}
             />
             <Field
               name="plainPassword"
-              component={this.renderField}
+              component={Input}
               type="password"
               label="Password"
               validate={[required(), length({ minimum: 6 })]}
             />
             <Field
               name="password_confirm"
-              component={this.renderField}
+              component={Input}
               type="password"
               label="Confirm password"
               validate={[
                 confirmation({ field: 'plainPassword', fieldLabel: 'Password' })
               ]}
             />
-            <button>Register</button>
-          </form>
+            <Button>Register</Button>
+          </Form>
         )}
       </div>
     );

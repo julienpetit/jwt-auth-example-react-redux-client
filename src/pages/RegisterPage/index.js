@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import { Header, Container, Grid } from 'semantic-ui-react';
 import RegisterForm from '../../modules/register/containers/RegisterFormContainer';
 
-class App extends Component {
+class RegisterPage extends Component {
   render() {
     return (
-      <div className="App">
-        <RegisterForm />
-      </div>
+      <Container className="section">
+        <Grid centered columns={2}>
+          <Grid.Column>
+            <Header as="h1">Register</Header>
+            <RegisterForm />
+          </Grid.Column>
+        </Grid>
+      </Container>
     );
   }
 }
 
-export default App;
+export default RegisterPage;
