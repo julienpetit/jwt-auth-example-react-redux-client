@@ -5,7 +5,7 @@ import LoginPage from '../pages/LoginPage';
 import LogoutPage from '../pages/LogoutPage';
 import AccountPage from '../pages/AccountPage';
 import UsersPage from '../pages/UsersPage';
-import UserEditPage from '../modules/users/components/UserEdit';
+import UserEditPage from '../pages/UserEditPage';
 import RegisterPage from '../pages/RegisterPage';
 
 const routes = [

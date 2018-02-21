@@ -1,30 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { required, length, email } from 'redux-form-validators';
+import { Button, Form, Loader } from 'semantic-ui-react';
 import { fetchRequest, updateRequest } from '../../actions';
+import Input from '../../../../components/form/Input';
+import Checkbox from '../../../../components/form/Checkbox';
 
 class UserEdit extends Component {
+  static propTypes = {
+    userId: PropTypes.string.isRequired
+  };
+
   componentWillMount() {
-    this.props.fetchRequest(this.props.match.params.id);
+    this.props.fetchRequest(this.props.userId);
   }
 
   handleSubmit(values) {
     this.props.updateRequest(values);
-  }
-
-  renderField({ input, label, type, meta: { touched, error, warning } }) {
-    return (
-      <div>
-        <label>{label}</label>
-        <div>
-          <input {...input} placeholder={label} type={type} />
-          {touched &&
-            ((error && <span>{error}</span>) ||
-              (warning && <span>{warning}</span>))}
-        </div>
-      </div>
-    );
   }
 
   render() {
@@ -39,52 +33,45 @@ class UserEdit extends Component {
 
     return (
       <div>
-        {isLoading && <p>Loading...</p>}
+        <Loader active={isLoading} inline="centered" />
 
         {initialValues && (
-          <form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
-            <div>
-              <Field
-                name="username"
-                component={this.renderField}
-                label="Username"
-                validate={[required(), length({ minimum: 2 })]}
-              />
-            </div>
-            <div>
-              <Field
-                name="email"
-                component={this.renderField}
-                label="Email"
-                validate={[required(), email(), length({ minimum: 2 })]}
-              />
-            </div>
-            <div>
-              <label htmlFor="enabled">Enabled</label>
-              <Field name="enabled" component="input" type="checkbox" />
-            </div>
-            <div>
+          <Form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
+            <Field
+              name="username"
+              component={Input}
+              label="Username"
+              validate={[required(), length({ minimum: 2 })]}
+            />
+            <Field
+              name="email"
+              component={Input}
+              label="Email"
+              validate={[required(), email(), length({ minimum: 2 })]}
+            />
+
+            <Field name="enabled" label="Enabled" component={Checkbox} />
+
+            <div className="field">
               <label>Roles</label>
-              <div>
-                <Field name="roles" component="select" multiple={true}>
-                  <option value="ROLE_USER">User</option>
-                  <option value="ROLE_ADMIN">Admin</option>
-                </Field>
-              </div>
+
+              <Field name="roles" component="select" multiple={true}>
+                <option value="ROLE_USER">User</option>
+                <option value="ROLE_ADMIN">Admin</option>
+              </Field>
             </div>
-            <div>
-              <button type="submit" disabled={pristine || submitting}>
-                Submit
-              </button>
-              <button
-                type="button"
-                disabled={pristine || submitting}
-                onClick={reset}
-              >
-                Clear Values
-              </button>
-            </div>
-          </form>
+
+            <Button type="submit" disabled={pristine || submitting}>
+              Submit
+            </Button>
+            <Button
+              type="button"
+              disabled={pristine || submitting}
+              onClick={reset}
+            >
+              Clear Values
+            </Button>
+          </Form>
         )}
       </div>
     );
