@@ -1,25 +1,27 @@
 import React, { Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
+
 import { Menu } from 'semantic-ui-react';
+import SwitchLanguage from '../../modules/locale/components/SwitchLanguage';
 import './Header.css';
 
-const Header = ({ isAuthenticated = false, tokenData }) => (
+const Header = ({ isAuthenticated = false, tokenData, intl }) => (
   <header className="App-header">
     <h1 className="App-title">
-      {isAuthenticated && tokenData ? (
-        <span>Welcome {tokenData.username}</span>
-      ) : (
-        <span>Welcome to React</span>
-      )}
+      <FormattedMessage id="app.title" />
     </h1>
+
+    <SwitchLanguage />
+
     <Menu pointing>
       <Menu.Item
         as={NavLink}
         to="/"
         exact
         activeClassName="active"
-        name="Home"
+        name={intl.formatMessage({ id: 'nav.home' })}
       />
 
       <Menu.Item
@@ -27,7 +29,7 @@ const Header = ({ isAuthenticated = false, tokenData }) => (
         to="/users"
         exact
         activeClassName="active"
-        name="Users"
+        name={intl.formatMessage({ id: 'nav.users' })}
       />
 
       <Menu.Menu position="right">
@@ -38,14 +40,14 @@ const Header = ({ isAuthenticated = false, tokenData }) => (
               to="/account"
               exact
               activeClassName="active"
-              name="Account"
+              name={intl.formatMessage({ id: 'nav.account' })}
             />
             <Menu.Item
               as={NavLink}
               to="/logout"
               exact
               activeClassName="active"
-              name="Logout"
+              name={intl.formatMessage({ id: 'nav.logout' })}
             />
           </Fragment>
         ) : (
@@ -55,14 +57,14 @@ const Header = ({ isAuthenticated = false, tokenData }) => (
               to="/register"
               exact
               activeClassName="active"
-              name="Register"
+              name={intl.formatMessage({ id: 'nav.register' })}
             />
             <Menu.Item
               as={NavLink}
               to="/login"
               exact
               activeClassName="active"
-              name="Login"
+              name={intl.formatMessage({ id: 'nav.login' })}
             />
           </Fragment>
         )}
@@ -76,4 +78,4 @@ Header.propTypes = {
   tokenData: PropTypes.object
 };
 
-export default Header;
+export default injectIntl(Header);
