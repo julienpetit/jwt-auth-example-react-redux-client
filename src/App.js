@@ -6,6 +6,7 @@ import { Dimmer, Loader } from 'semantic-ui-react';
 import Header from './components/Header';
 import routes from './routes';
 import auth from './modules/auth';
+import locale from './modules/locale';
 import './app.css';
 
 class App extends Component {
@@ -17,12 +18,13 @@ class App extends Component {
 
   componentWillMount() {
     this.props.dispatch(auth.actions.loginRefreshTokenRequest());
+    this.props.dispatch(locale.actions.updateLocale());
   }
 
   render() {
-    const { isAuthenticated, isLoginChecked, tokenData } = this.props;
+    const { isAuthenticated, isAppLoaded, tokenData } = this.props;
 
-    if (!isLoginChecked) {
+    if (!isAppLoaded) {
       return (
         <Dimmer active inverted>
           <Loader />
@@ -46,7 +48,7 @@ export default connect(
   ({ auth }) => ({
     isAuthenticated: auth.isAuthenticated,
     tokenData: auth.tokenData,
-    isLoginChecked: auth.isLoginChecked
+    isAppLoaded: auth.isLoginChecked
   }),
   dispatch => ({ dispatch }),
   null,

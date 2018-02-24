@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './index';
-import { shallow } from 'enzyme';
+import { shallowWithIntl } from '../../helpers/intl-enzyme-test-helper.js';
 
 describe('always render subcomponents', () => {
-  const wrapper = shallow(<Header isAuthenticated={true} />);
+  const wrapper = shallowWithIntl(<Header isAuthenticated={true} />).dive();
 
   test('always renders header', () => {
     const header = wrapper.find('header');
@@ -19,11 +19,11 @@ describe('always render subcomponents', () => {
 test('NavLink change when isAuthenticated is true or false', () => {
   let wrapper;
 
-  wrapper = shallow(<Header isAuthenticated={true} />);
+  wrapper = shallowWithIntl(<Header isAuthenticated={true} />);
 
   expect(wrapper).toMatchSnapshot();
 
-  wrapper = shallow(<Header isAuthenticated={false} />);
+  wrapper = shallowWithIntl(<Header isAuthenticated={false} />);
 
   expect(wrapper).toMatchSnapshot();
 });

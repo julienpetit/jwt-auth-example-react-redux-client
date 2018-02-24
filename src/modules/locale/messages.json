@@ -1,0 +1,62 @@
+{
+  "en": {
+    "app.title": "Welcome",
+    "locale.fr": "French",
+    "locale.en": "English",
+    "nav.home": "Home",
+    "nav.users": "users",
+    "nav.account": "My account",
+    "nav.login": "Login",
+    "nav.logout": "Logout",
+    "nav.register": "Register"
+  },
+  "fr": {
+    "app.title": "Bienvenue",
+    "locale.fr": "Français",
+    "locale.en": "Anglais",
+    "nav.home": "Accueil",
+    "nav.users": "Utilisateurs",
+    "nav.account": "Mon compte",
+    "nav.login": "Connexion",
+    "nav.logout": "Déconnexion",
+    "nav.register": "Créer un compte",
+    "form.errors.absence": "must be blank",
+    "form.errors.acceptance": "must be accepted",
+    "form.errors.confirmation": "doesn't match `{fieldLabel}`",
+    "form.errors.dateFormat": "expected format: {format}",
+    "form.errors.dateInvalid": "is not a valid date",
+    "form.errors.dateRange": "shoud be {op} {date}",
+    "form.errors.email": "is not a valid email",
+    "form.errors.equalTo": "must be equal to {count, number}",
+    "form.errors.even": "must be even",
+    "form.errors.exclusion": "is reserved",
+    "form.errors.file": "is not a file",
+    "form.errors.fileAccept":
+      "invalid file {count, plural, one {type} other {types ({count})}}",
+    "form.errors.fileTooBig":
+      "{count, plural, one {is} other {{count} files are}} too small (maximum is {count, plural, one {{size}} other {{size} each}})",
+    "form.errors.fileTooFew": "invalid number of files (minimum is {count})",
+    "form.errors.fileTooMany": "invalid number of files (maximum is {count})",
+    "form.errors.fileTooSmall":
+      "{count, plural, one {is} other {{count} files are}} too small (minimum is {count, plural, one {{size}} other {{size} each}})",
+    "form.errors.greaterThan": "must be greater than {count, number}",
+    "form.errors.greaterThanOrEqualTo":
+      "must be greater than or equal to {count, number}",
+    "form.errors.inclusion": "is not included in the list",
+    "form.errors.invalid": "is invalid",
+    "form.errors.lessThan": "must be less than {count, number}",
+    "form.errors.lessThanOrEqualTo":
+      "must be less than or equal to {count, number}",
+    "form.errors.notANumber": "is not a number",
+    "form.errors.odd": "must be odd",
+    "form.errors.otherThan": "must be other than {count, number}",
+    "form.errors.presence": "Ce champ est obligatoire",
+    "form.errors.tooLong":
+      "is too long (maximum is {count, number} {count, plural, one {character} other {characters}})",
+    "form.errors.tooShort":
+      "is too short (minimum is {count, number} {count, plural, one {character} other {characters}})",
+    "form.errors.url": "is not a valid URL",
+    "form.errors.wrongLength":
+      "is the wrong length (should be {count, number} {count, plural, one {character} other {characters}})"
+  }
+}

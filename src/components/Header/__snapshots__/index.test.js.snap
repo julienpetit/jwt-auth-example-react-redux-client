@@ -4,7 +4,42 @@ exports[`NavLink change when isAuthenticated is true or false 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header
+  Symbol(enzyme.__unrendered__): <InjectIntl(Header)
+    intl={
+        Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": Object {
+              "app.title": "Welcome",
+              "locale.en": "English",
+              "locale.fr": "French",
+              "nav.account": "My account",
+              "nav.home": "Home",
+              "nav.login": "Login",
+              "nav.logout": "Logout",
+              "nav.register": "Register",
+              "nav.users": "users",
+            },
+            "now": [Function],
+            "textComponent": "span",
+          }
+    }
     isAuthenticated={true}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -17,497 +52,132 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <h1
-          className="App-title"
->
-          <span>
-                    Welcome to React
-          </span>
-</h1>,
-        <Menu
-          pointing={true}
->
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Home"
-                    to="/"
-          />
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Users"
-                    to="/users"
-          />
-          <MenuMenu
-                    position="right"
-          >
-                    <Unknown>
-                              <MenuItem
-                                        activeClassName="active"
-                                        as={[Function]}
-                                        exact={true}
-                                        name="Account"
-                                        to="/account"
-                              />
-                              <MenuItem
-                                        activeClassName="active"
-                                        as={[Function]}
-                                        exact={true}
-                                        name="Logout"
-                                        to="/logout"
-                              />
-                    </Unknown>
-          </MenuMenu>
-</Menu>,
-      ],
-      "className": "App-header",
+      "intl": Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": Object {
+          "app.title": "Welcome",
+          "locale.en": "English",
+          "locale.fr": "French",
+          "nav.account": "My account",
+          "nav.home": "Home",
+          "nav.login": "Login",
+          "nav.logout": "Logout",
+          "nav.register": "Register",
+          "nav.users": "users",
+        },
+        "now": [Function],
+        "textComponent": "span",
+      },
+      "isAuthenticated": true,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <span>
-            Welcome to React
-</span>,
-          "className": "App-title",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Welcome to React",
-          },
-          "ref": null,
-          "rendered": "Welcome to React",
-          "type": "span",
-        },
-        "type": "h1",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
-              name="Home"
-              to="/"
-/>,
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
-              name="Users"
-              to="/users"
-/>,
-            <MenuMenu
-              position="right"
->
-              <Unknown>
-                            <MenuItem
-                                          activeClassName="active"
-                                          as={[Function]}
-                                          exact={true}
-                                          name="Account"
-                                          to="/account"
-                            />
-                            <MenuItem
-                                          activeClassName="active"
-                                          as={[Function]}
-                                          exact={true}
-                                          name="Logout"
-                                          to="/logout"
-                            />
-              </Unknown>
-</MenuMenu>,
-          ],
-          "pointing": true,
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
-              "name": "Home",
-              "to": "/",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
-              "name": "Users",
-              "to": "/users",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <Unknown>
-                <MenuItem
-                                activeClassName="active"
-                                as={[Function]}
-                                exact={true}
-                                name="Account"
-                                to="/account"
-                />
-                <MenuItem
-                                activeClassName="active"
-                                as={[Function]}
-                                exact={true}
-                                name="Logout"
-                                to="/logout"
-                />
-</Unknown>,
-              "position": "right",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": Array [
-                  <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Account"
-                    to="/account"
-/>,
-                  <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Logout"
-                    to="/logout"
-/>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "activeClassName": "active",
-                    "as": [Function],
-                    "exact": true,
-                    "name": "Account",
-                    "to": "/account",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "activeClassName": "active",
-                    "as": [Function],
-                    "exact": true,
-                    "name": "Logout",
-                    "to": "/logout",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": Symbol(react.fragment),
-            },
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-    ],
-    "type": "header",
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <h1
-            className="App-title"
->
-            <span>
-                        Welcome to React
-            </span>
-</h1>,
-          <Menu
-            pointing={true}
->
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
-                        name="Home"
-                        to="/"
-            />
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
-                        name="Users"
-                        to="/users"
-            />
-            <MenuMenu
-                        position="right"
-            >
-                        <Unknown>
-                                    <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Account"
-                                                to="/account"
-                                    />
-                                    <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Logout"
-                                                to="/logout"
-                                    />
-                        </Unknown>
-            </MenuMenu>
-</Menu>,
-        ],
-        "className": "App-header",
+        "intl": Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": Object {
+            "app.title": "Welcome",
+            "locale.en": "English",
+            "locale.fr": "French",
+            "nav.account": "My account",
+            "nav.home": "Home",
+            "nav.login": "Login",
+            "nav.logout": "Logout",
+            "nav.register": "Register",
+            "nav.users": "users",
+          },
+          "now": [Function],
+          "textComponent": "span",
+        },
+        "isAuthenticated": true,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <span>
-              Welcome to React
-</span>,
-            "className": "App-title",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Welcome to React",
-            },
-            "ref": null,
-            "rendered": "Welcome to React",
-            "type": "span",
-          },
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Home"
-                to="/"
-/>,
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Users"
-                to="/users"
-/>,
-              <MenuMenu
-                position="right"
->
-                <Unknown>
-                                <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Account"
-                                                to="/account"
-                                />
-                                <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Logout"
-                                                to="/logout"
-                                />
-                </Unknown>
-</MenuMenu>,
-            ],
-            "pointing": true,
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Home",
-                "to": "/",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Users",
-                "to": "/users",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": <Unknown>
-                  <MenuItem
-                                    activeClassName="active"
-                                    as={[Function]}
-                                    exact={true}
-                                    name="Account"
-                                    to="/account"
-                  />
-                  <MenuItem
-                                    activeClassName="active"
-                                    as={[Function]}
-                                    exact={true}
-                                    name="Logout"
-                                    to="/logout"
-                  />
-</Unknown>,
-                "position": "right",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": Array [
-                    <MenuItem
-                      activeClassName="active"
-                      as={[Function]}
-                      exact={true}
-                      name="Account"
-                      to="/account"
-/>,
-                    <MenuItem
-                      activeClassName="active"
-                      as={[Function]}
-                      exact={true}
-                      name="Logout"
-                      to="/logout"
-/>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "activeClassName": "active",
-                      "as": [Function],
-                      "exact": true,
-                      "name": "Account",
-                      "to": "/account",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "activeClassName": "active",
-                      "as": [Function],
-                      "exact": true,
-                      "name": "Logout",
-                      "to": "/logout",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
-                "type": Symbol(react.fragment),
-              },
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-      ],
-      "type": "header",
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "context": Object {
+      "intl": Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": Object {
+          "app.title": "Welcome",
+          "locale.en": "English",
+          "locale.fr": "French",
+          "nav.account": "My account",
+          "nav.home": "Home",
+          "nav.login": "Login",
+          "nav.logout": "Logout",
+          "nav.register": "Register",
+          "nav.users": "users",
+        },
+        "now": [Function],
+        "textComponent": "span",
       },
     },
   },
@@ -518,7 +188,42 @@ exports[`NavLink change when isAuthenticated is true or false 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header
+  Symbol(enzyme.__unrendered__): <InjectIntl(Header)
+    intl={
+        Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": Object {
+              "app.title": "Welcome",
+              "locale.en": "English",
+              "locale.fr": "French",
+              "nav.account": "My account",
+              "nav.home": "Home",
+              "nav.login": "Login",
+              "nav.logout": "Logout",
+              "nav.register": "Register",
+              "nav.users": "users",
+            },
+            "now": [Function],
+            "textComponent": "span",
+          }
+    }
     isAuthenticated={false}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -531,497 +236,132 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <h1
-          className="App-title"
->
-          <span>
-                    Welcome to React
-          </span>
-</h1>,
-        <Menu
-          pointing={true}
->
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Home"
-                    to="/"
-          />
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Users"
-                    to="/users"
-          />
-          <MenuMenu
-                    position="right"
-          >
-                    <Unknown>
-                              <MenuItem
-                                        activeClassName="active"
-                                        as={[Function]}
-                                        exact={true}
-                                        name="Register"
-                                        to="/register"
-                              />
-                              <MenuItem
-                                        activeClassName="active"
-                                        as={[Function]}
-                                        exact={true}
-                                        name="Login"
-                                        to="/login"
-                              />
-                    </Unknown>
-          </MenuMenu>
-</Menu>,
-      ],
-      "className": "App-header",
+      "intl": Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": Object {
+          "app.title": "Welcome",
+          "locale.en": "English",
+          "locale.fr": "French",
+          "nav.account": "My account",
+          "nav.home": "Home",
+          "nav.login": "Login",
+          "nav.logout": "Logout",
+          "nav.register": "Register",
+          "nav.users": "users",
+        },
+        "now": [Function],
+        "textComponent": "span",
+      },
+      "isAuthenticated": false,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <span>
-            Welcome to React
-</span>,
-          "className": "App-title",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Welcome to React",
-          },
-          "ref": null,
-          "rendered": "Welcome to React",
-          "type": "span",
-        },
-        "type": "h1",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
-              name="Home"
-              to="/"
-/>,
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
-              name="Users"
-              to="/users"
-/>,
-            <MenuMenu
-              position="right"
->
-              <Unknown>
-                            <MenuItem
-                                          activeClassName="active"
-                                          as={[Function]}
-                                          exact={true}
-                                          name="Register"
-                                          to="/register"
-                            />
-                            <MenuItem
-                                          activeClassName="active"
-                                          as={[Function]}
-                                          exact={true}
-                                          name="Login"
-                                          to="/login"
-                            />
-              </Unknown>
-</MenuMenu>,
-          ],
-          "pointing": true,
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
-              "name": "Home",
-              "to": "/",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
-              "name": "Users",
-              "to": "/users",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <Unknown>
-                <MenuItem
-                                activeClassName="active"
-                                as={[Function]}
-                                exact={true}
-                                name="Register"
-                                to="/register"
-                />
-                <MenuItem
-                                activeClassName="active"
-                                as={[Function]}
-                                exact={true}
-                                name="Login"
-                                to="/login"
-                />
-</Unknown>,
-              "position": "right",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": Array [
-                  <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Register"
-                    to="/register"
-/>,
-                  <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Login"
-                    to="/login"
-/>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "activeClassName": "active",
-                    "as": [Function],
-                    "exact": true,
-                    "name": "Register",
-                    "to": "/register",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "activeClassName": "active",
-                    "as": [Function],
-                    "exact": true,
-                    "name": "Login",
-                    "to": "/login",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": Symbol(react.fragment),
-            },
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-    ],
-    "type": "header",
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <h1
-            className="App-title"
->
-            <span>
-                        Welcome to React
-            </span>
-</h1>,
-          <Menu
-            pointing={true}
->
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
-                        name="Home"
-                        to="/"
-            />
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
-                        name="Users"
-                        to="/users"
-            />
-            <MenuMenu
-                        position="right"
-            >
-                        <Unknown>
-                                    <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Register"
-                                                to="/register"
-                                    />
-                                    <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Login"
-                                                to="/login"
-                                    />
-                        </Unknown>
-            </MenuMenu>
-</Menu>,
-        ],
-        "className": "App-header",
+        "intl": Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": Object {
+            "app.title": "Welcome",
+            "locale.en": "English",
+            "locale.fr": "French",
+            "nav.account": "My account",
+            "nav.home": "Home",
+            "nav.login": "Login",
+            "nav.logout": "Logout",
+            "nav.register": "Register",
+            "nav.users": "users",
+          },
+          "now": [Function],
+          "textComponent": "span",
+        },
+        "isAuthenticated": false,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <span>
-              Welcome to React
-</span>,
-            "className": "App-title",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Welcome to React",
-            },
-            "ref": null,
-            "rendered": "Welcome to React",
-            "type": "span",
-          },
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Home"
-                to="/"
-/>,
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Users"
-                to="/users"
-/>,
-              <MenuMenu
-                position="right"
->
-                <Unknown>
-                                <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Register"
-                                                to="/register"
-                                />
-                                <MenuItem
-                                                activeClassName="active"
-                                                as={[Function]}
-                                                exact={true}
-                                                name="Login"
-                                                to="/login"
-                                />
-                </Unknown>
-</MenuMenu>,
-            ],
-            "pointing": true,
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Home",
-                "to": "/",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Users",
-                "to": "/users",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": <Unknown>
-                  <MenuItem
-                                    activeClassName="active"
-                                    as={[Function]}
-                                    exact={true}
-                                    name="Register"
-                                    to="/register"
-                  />
-                  <MenuItem
-                                    activeClassName="active"
-                                    as={[Function]}
-                                    exact={true}
-                                    name="Login"
-                                    to="/login"
-                  />
-</Unknown>,
-                "position": "right",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": Array [
-                    <MenuItem
-                      activeClassName="active"
-                      as={[Function]}
-                      exact={true}
-                      name="Register"
-                      to="/register"
-/>,
-                    <MenuItem
-                      activeClassName="active"
-                      as={[Function]}
-                      exact={true}
-                      name="Login"
-                      to="/login"
-/>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "activeClassName": "active",
-                      "as": [Function],
-                      "exact": true,
-                      "name": "Register",
-                      "to": "/register",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "activeClassName": "active",
-                      "as": [Function],
-                      "exact": true,
-                      "name": "Login",
-                      "to": "/login",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
-                "type": Symbol(react.fragment),
-              },
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-      ],
-      "type": "header",
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "context": Object {
+      "intl": Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": Object {
+          "app.title": "Welcome",
+          "locale.en": "English",
+          "locale.fr": "French",
+          "nav.account": "My account",
+          "nav.home": "Home",
+          "nav.login": "Login",
+          "nav.logout": "Logout",
+          "nav.register": "Register",
+          "nav.users": "users",
+        },
+        "now": [Function],
+        "textComponent": "span",
       },
     },
   },
