@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/julienpetit/jwt-auth-example-react-redux-client.svg?branch=master)](https://travis-ci.org/julienpetit/jwt-auth-example-react-redux-client)
-
+[![dependencies Status](https://david-dm.org/julienpetit/jwt-auth-example-react-redux-client/status.svg)](https://david-dm.org/julienpetit/jwt-auth-example-react-redux-client)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e31b5f1016f414c84e4c6c3db50decd)](https://www.codacy.com/app/julienpetit/jwt-auth-example-react-redux-client?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=julienpetit/jwt-auth-example-react-redux-client&amp;utm_campaign=Badge_Grade)
 # JWT auth client using react, redux and redux-sagas
 
 ## prerequisite

@@ -23,7 +23,9 @@ ShallowWrapper {
         <h1
           className="App-title"
 >
-          Welcome to React
+          <span>
+                    Welcome to React
+          </span>
 </h1>,
         <Menu
           pointing={true}
@@ -39,33 +41,28 @@ ShallowWrapper {
                     activeClassName="active"
                     as={[Function]}
                     exact={true}
-                    name="Account"
-                    to="/account"
-          />
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Register"
-                    to="/register"
-          />
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
                     name="Users"
                     to="/users"
           />
           <MenuMenu
                     position="right"
           >
-                    <MenuItem
-                              activeClassName="active"
-                              as={[Function]}
-                              exact={true}
-                              name="Logout"
-                              to="/logout"
-                    />
+                    <Unknown>
+                              <MenuItem
+                                        activeClassName="active"
+                                        as={[Function]}
+                                        exact={true}
+                                        name="Account"
+                                        to="/account"
+                              />
+                              <MenuItem
+                                        activeClassName="active"
+                                        as={[Function]}
+                                        exact={true}
+                                        name="Logout"
+                                        to="/logout"
+                              />
+                    </Unknown>
           </MenuMenu>
 </Menu>,
       ],
@@ -78,11 +75,23 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Welcome to React",
+          "children": <span>
+            Welcome to React
+</span>,
           "className": "App-title",
         },
         "ref": null,
-        "rendered": "Welcome to React",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Welcome to React",
+          },
+          "ref": null,
+          "rendered": "Welcome to React",
+          "type": "span",
+        },
         "type": "h1",
       },
       Object {
@@ -102,33 +111,28 @@ ShallowWrapper {
               activeClassName="active"
               as={[Function]}
               exact={true}
-              name="Account"
-              to="/account"
-/>,
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
-              name="Register"
-              to="/register"
-/>,
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
               name="Users"
               to="/users"
 />,
             <MenuMenu
               position="right"
 >
-              <MenuItem
-                            activeClassName="active"
-                            as={[Function]}
-                            exact={true}
-                            name="Logout"
-                            to="/logout"
-              />
+              <Unknown>
+                            <MenuItem
+                                          activeClassName="active"
+                                          as={[Function]}
+                                          exact={true}
+                                          name="Account"
+                                          to="/account"
+                            />
+                            <MenuItem
+                                          activeClassName="active"
+                                          as={[Function]}
+                                          exact={true}
+                                          name="Logout"
+                                          to="/logout"
+                            />
+              </Unknown>
 </MenuMenu>,
           ],
           "pointing": true,
@@ -158,36 +162,6 @@ ShallowWrapper {
               "activeClassName": "active",
               "as": [Function],
               "exact": true,
-              "name": "Account",
-              "to": "/account",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
-              "name": "Register",
-              "to": "/register",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
               "name": "Users",
               "to": "/users",
             },
@@ -200,30 +174,81 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Logout"
-                to="/logout"
-/>,
+              "children": <Unknown>
+                <MenuItem
+                                activeClassName="active"
+                                as={[Function]}
+                                exact={true}
+                                name="Account"
+                                to="/account"
+                />
+                <MenuItem
+                                activeClassName="active"
+                                as={[Function]}
+                                exact={true}
+                                name="Logout"
+                                to="/logout"
+                />
+</Unknown>,
               "position": "right",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Logout",
-                "to": "/logout",
+                "children": Array [
+                  <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Account"
+                    to="/account"
+/>,
+                  <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Logout"
+                    to="/logout"
+/>,
+                ],
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "as": [Function],
+                    "exact": true,
+                    "name": "Account",
+                    "to": "/account",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "as": [Function],
+                    "exact": true,
+                    "name": "Logout",
+                    "to": "/logout",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": Symbol(react.fragment),
             },
             "type": [Function],
           },
@@ -243,7 +268,9 @@ ShallowWrapper {
           <h1
             className="App-title"
 >
-            Welcome to React
+            <span>
+                        Welcome to React
+            </span>
 </h1>,
           <Menu
             pointing={true}
@@ -259,33 +286,28 @@ ShallowWrapper {
                         activeClassName="active"
                         as={[Function]}
                         exact={true}
-                        name="Account"
-                        to="/account"
-            />
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
-                        name="Register"
-                        to="/register"
-            />
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
                         name="Users"
                         to="/users"
             />
             <MenuMenu
                         position="right"
             >
-                        <MenuItem
-                                    activeClassName="active"
-                                    as={[Function]}
-                                    exact={true}
-                                    name="Logout"
-                                    to="/logout"
-                        />
+                        <Unknown>
+                                    <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Account"
+                                                to="/account"
+                                    />
+                                    <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Logout"
+                                                to="/logout"
+                                    />
+                        </Unknown>
             </MenuMenu>
 </Menu>,
         ],
@@ -298,11 +320,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Welcome to React",
+            "children": <span>
+              Welcome to React
+</span>,
             "className": "App-title",
           },
           "ref": null,
-          "rendered": "Welcome to React",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Welcome to React",
+            },
+            "ref": null,
+            "rendered": "Welcome to React",
+            "type": "span",
+          },
           "type": "h1",
         },
         Object {
@@ -322,33 +356,28 @@ ShallowWrapper {
                 activeClassName="active"
                 as={[Function]}
                 exact={true}
-                name="Account"
-                to="/account"
-/>,
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Register"
-                to="/register"
-/>,
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
                 name="Users"
                 to="/users"
 />,
               <MenuMenu
                 position="right"
 >
-                <MenuItem
-                                activeClassName="active"
-                                as={[Function]}
-                                exact={true}
-                                name="Logout"
-                                to="/logout"
-                />
+                <Unknown>
+                                <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Account"
+                                                to="/account"
+                                />
+                                <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Logout"
+                                                to="/logout"
+                                />
+                </Unknown>
 </MenuMenu>,
             ],
             "pointing": true,
@@ -378,36 +407,6 @@ ShallowWrapper {
                 "activeClassName": "active",
                 "as": [Function],
                 "exact": true,
-                "name": "Account",
-                "to": "/account",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Register",
-                "to": "/register",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
                 "name": "Users",
                 "to": "/users",
               },
@@ -420,30 +419,81 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": <MenuItem
-                  activeClassName="active"
-                  as={[Function]}
-                  exact={true}
-                  name="Logout"
-                  to="/logout"
-/>,
+                "children": <Unknown>
+                  <MenuItem
+                                    activeClassName="active"
+                                    as={[Function]}
+                                    exact={true}
+                                    name="Account"
+                                    to="/account"
+                  />
+                  <MenuItem
+                                    activeClassName="active"
+                                    as={[Function]}
+                                    exact={true}
+                                    name="Logout"
+                                    to="/logout"
+                  />
+</Unknown>,
                 "position": "right",
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
-                  "activeClassName": "active",
-                  "as": [Function],
-                  "exact": true,
-                  "name": "Logout",
-                  "to": "/logout",
+                  "children": Array [
+                    <MenuItem
+                      activeClassName="active"
+                      as={[Function]}
+                      exact={true}
+                      name="Account"
+                      to="/account"
+/>,
+                    <MenuItem
+                      activeClassName="active"
+                      as={[Function]}
+                      exact={true}
+                      name="Logout"
+                      to="/logout"
+/>,
+                  ],
                 },
                 "ref": null,
-                "rendered": null,
-                "type": [Function],
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "as": [Function],
+                      "exact": true,
+                      "name": "Account",
+                      "to": "/account",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "as": [Function],
+                      "exact": true,
+                      "name": "Logout",
+                      "to": "/logout",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": Symbol(react.fragment),
               },
               "type": [Function],
             },
@@ -487,7 +537,9 @@ ShallowWrapper {
         <h1
           className="App-title"
 >
-          Welcome to React
+          <span>
+                    Welcome to React
+          </span>
 </h1>,
         <Menu
           pointing={true}
@@ -503,33 +555,28 @@ ShallowWrapper {
                     activeClassName="active"
                     as={[Function]}
                     exact={true}
-                    name="Account"
-                    to="/account"
-          />
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
-                    name="Register"
-                    to="/register"
-          />
-          <MenuItem
-                    activeClassName="active"
-                    as={[Function]}
-                    exact={true}
                     name="Users"
                     to="/users"
           />
           <MenuMenu
                     position="right"
           >
-                    <MenuItem
-                              activeClassName="active"
-                              as={[Function]}
-                              exact={true}
-                              name="Login"
-                              to="/login"
-                    />
+                    <Unknown>
+                              <MenuItem
+                                        activeClassName="active"
+                                        as={[Function]}
+                                        exact={true}
+                                        name="Register"
+                                        to="/register"
+                              />
+                              <MenuItem
+                                        activeClassName="active"
+                                        as={[Function]}
+                                        exact={true}
+                                        name="Login"
+                                        to="/login"
+                              />
+                    </Unknown>
           </MenuMenu>
 </Menu>,
       ],
@@ -542,11 +589,23 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Welcome to React",
+          "children": <span>
+            Welcome to React
+</span>,
           "className": "App-title",
         },
         "ref": null,
-        "rendered": "Welcome to React",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Welcome to React",
+          },
+          "ref": null,
+          "rendered": "Welcome to React",
+          "type": "span",
+        },
         "type": "h1",
       },
       Object {
@@ -566,33 +625,28 @@ ShallowWrapper {
               activeClassName="active"
               as={[Function]}
               exact={true}
-              name="Account"
-              to="/account"
-/>,
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
-              name="Register"
-              to="/register"
-/>,
-            <MenuItem
-              activeClassName="active"
-              as={[Function]}
-              exact={true}
               name="Users"
               to="/users"
 />,
             <MenuMenu
               position="right"
 >
-              <MenuItem
-                            activeClassName="active"
-                            as={[Function]}
-                            exact={true}
-                            name="Login"
-                            to="/login"
-              />
+              <Unknown>
+                            <MenuItem
+                                          activeClassName="active"
+                                          as={[Function]}
+                                          exact={true}
+                                          name="Register"
+                                          to="/register"
+                            />
+                            <MenuItem
+                                          activeClassName="active"
+                                          as={[Function]}
+                                          exact={true}
+                                          name="Login"
+                                          to="/login"
+                            />
+              </Unknown>
 </MenuMenu>,
           ],
           "pointing": true,
@@ -622,36 +676,6 @@ ShallowWrapper {
               "activeClassName": "active",
               "as": [Function],
               "exact": true,
-              "name": "Account",
-              "to": "/account",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
-              "name": "Register",
-              "to": "/register",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeClassName": "active",
-              "as": [Function],
-              "exact": true,
               "name": "Users",
               "to": "/users",
             },
@@ -664,30 +688,81 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Login"
-                to="/login"
-/>,
+              "children": <Unknown>
+                <MenuItem
+                                activeClassName="active"
+                                as={[Function]}
+                                exact={true}
+                                name="Register"
+                                to="/register"
+                />
+                <MenuItem
+                                activeClassName="active"
+                                as={[Function]}
+                                exact={true}
+                                name="Login"
+                                to="/login"
+                />
+</Unknown>,
               "position": "right",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Login",
-                "to": "/login",
+                "children": Array [
+                  <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Register"
+                    to="/register"
+/>,
+                  <MenuItem
+                    activeClassName="active"
+                    as={[Function]}
+                    exact={true}
+                    name="Login"
+                    to="/login"
+/>,
+                ],
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "as": [Function],
+                    "exact": true,
+                    "name": "Register",
+                    "to": "/register",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "as": [Function],
+                    "exact": true,
+                    "name": "Login",
+                    "to": "/login",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": Symbol(react.fragment),
             },
             "type": [Function],
           },
@@ -707,7 +782,9 @@ ShallowWrapper {
           <h1
             className="App-title"
 >
-            Welcome to React
+            <span>
+                        Welcome to React
+            </span>
 </h1>,
           <Menu
             pointing={true}
@@ -723,33 +800,28 @@ ShallowWrapper {
                         activeClassName="active"
                         as={[Function]}
                         exact={true}
-                        name="Account"
-                        to="/account"
-            />
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
-                        name="Register"
-                        to="/register"
-            />
-            <MenuItem
-                        activeClassName="active"
-                        as={[Function]}
-                        exact={true}
                         name="Users"
                         to="/users"
             />
             <MenuMenu
                         position="right"
             >
-                        <MenuItem
-                                    activeClassName="active"
-                                    as={[Function]}
-                                    exact={true}
-                                    name="Login"
-                                    to="/login"
-                        />
+                        <Unknown>
+                                    <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Register"
+                                                to="/register"
+                                    />
+                                    <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Login"
+                                                to="/login"
+                                    />
+                        </Unknown>
             </MenuMenu>
 </Menu>,
         ],
@@ -762,11 +834,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Welcome to React",
+            "children": <span>
+              Welcome to React
+</span>,
             "className": "App-title",
           },
           "ref": null,
-          "rendered": "Welcome to React",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Welcome to React",
+            },
+            "ref": null,
+            "rendered": "Welcome to React",
+            "type": "span",
+          },
           "type": "h1",
         },
         Object {
@@ -786,33 +870,28 @@ ShallowWrapper {
                 activeClassName="active"
                 as={[Function]}
                 exact={true}
-                name="Account"
-                to="/account"
-/>,
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
-                name="Register"
-                to="/register"
-/>,
-              <MenuItem
-                activeClassName="active"
-                as={[Function]}
-                exact={true}
                 name="Users"
                 to="/users"
 />,
               <MenuMenu
                 position="right"
 >
-                <MenuItem
-                                activeClassName="active"
-                                as={[Function]}
-                                exact={true}
-                                name="Login"
-                                to="/login"
-                />
+                <Unknown>
+                                <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Register"
+                                                to="/register"
+                                />
+                                <MenuItem
+                                                activeClassName="active"
+                                                as={[Function]}
+                                                exact={true}
+                                                name="Login"
+                                                to="/login"
+                                />
+                </Unknown>
 </MenuMenu>,
             ],
             "pointing": true,
@@ -842,36 +921,6 @@ ShallowWrapper {
                 "activeClassName": "active",
                 "as": [Function],
                 "exact": true,
-                "name": "Account",
-                "to": "/account",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
-                "name": "Register",
-                "to": "/register",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "activeClassName": "active",
-                "as": [Function],
-                "exact": true,
                 "name": "Users",
                 "to": "/users",
               },
@@ -884,30 +933,81 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": <MenuItem
-                  activeClassName="active"
-                  as={[Function]}
-                  exact={true}
-                  name="Login"
-                  to="/login"
-/>,
+                "children": <Unknown>
+                  <MenuItem
+                                    activeClassName="active"
+                                    as={[Function]}
+                                    exact={true}
+                                    name="Register"
+                                    to="/register"
+                  />
+                  <MenuItem
+                                    activeClassName="active"
+                                    as={[Function]}
+                                    exact={true}
+                                    name="Login"
+                                    to="/login"
+                  />
+</Unknown>,
                 "position": "right",
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
-                  "activeClassName": "active",
-                  "as": [Function],
-                  "exact": true,
-                  "name": "Login",
-                  "to": "/login",
+                  "children": Array [
+                    <MenuItem
+                      activeClassName="active"
+                      as={[Function]}
+                      exact={true}
+                      name="Register"
+                      to="/register"
+/>,
+                    <MenuItem
+                      activeClassName="active"
+                      as={[Function]}
+                      exact={true}
+                      name="Login"
+                      to="/login"
+/>,
+                  ],
                 },
                 "ref": null,
-                "rendered": null,
-                "type": [Function],
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "as": [Function],
+                      "exact": true,
+                      "name": "Register",
+                      "to": "/register",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "as": [Function],
+                      "exact": true,
+                      "name": "Login",
+                      "to": "/login",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": Symbol(react.fragment),
               },
               "type": [Function],
             },

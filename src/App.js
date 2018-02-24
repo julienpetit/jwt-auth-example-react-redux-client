@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const { isAuthenticated, isLoginChecked } = this.props;
+    const { isAuthenticated, isLoginChecked, tokenData } = this.props;
 
     if (!isLoginChecked) {
       return (
@@ -32,7 +32,7 @@ class App extends Component {
 
     return (
       <div>
-        <Header isAuthenticated={isAuthenticated} />
+        <Header isAuthenticated={isAuthenticated} tokenData={tokenData} />
 
         {routes.map(route => <Route key={route.path} {...route} />)}
 
@@ -45,6 +45,7 @@ class App extends Component {
 export default connect(
   ({ auth }) => ({
     isAuthenticated: auth.isAuthenticated,
+    tokenData: auth.tokenData,
     isLoginChecked: auth.isLoginChecked
   }),
   dispatch => ({ dispatch }),
