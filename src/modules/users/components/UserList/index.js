@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Label, Table, Loader } from 'semantic-ui-react';
+import { Table, Loader } from 'semantic-ui-react';
 import { fetchListRequest } from '../../actions';
 
 class UserList extends PureComponent {

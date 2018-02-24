@@ -1,19 +1,19 @@
 {
-  "name": "food-truck-web-app",
+  "name": "jwt-auth-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "enzyme": "^3.3.0",
     "husky": "^0.14.3",
     "jwt-decode": "auth0/jwt-decode",
-    "lint-staged": "^6.1.1",
+    "lint-staged": "^7.0.0",
     "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "next",
+    "react-router-redux": "^5.0.0",
     "react-scripts": "^1.1.0",
     "redux": "^3.7.2",
     "redux-form": "^7.2.0",
@@ -35,7 +35,8 @@
     "prettier": "prettier --single-quote --write 'src/**/*.{js,jsx,json,css}'",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && mv build/index.html build/200.html && surge build jwt-auth-client.julienpetit.fr"
   },
   "devDependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
